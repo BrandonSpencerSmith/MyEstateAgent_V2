@@ -61,6 +61,51 @@ function App() {
               <a href="tel:+441234567890" className="hidden sm:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span className="text-sm">01234 567890</span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Mobile Phone Number - Separate Row */}
+          <div className="sm:hidden border-t border-gray-100 py-2">
+            <a href="tel:+441234567890" className="flex items-center justify-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+              <Phone className="h-4 w-4" />
+              <span className="text-sm">01234 567890</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Welcome Message */}
+      <div className="bg-gray-50 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm text-gray-600">
+            Trusted estate agents serving the UK with over 15 years of experience
+          </p>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-12">
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                Welcome to <span className="text-blue-600">MyEstateAgent</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Your trusted partner in finding the perfect home. We specialise in helping you buy, sell, and rent properties across Leicestershire with personalised service and expert guidance.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                  <Search className="h-5 w-5" />
+                  <span>Find Your Home</span>
+                </button>
+                <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
+                  Book Valuation
+                </button>
+              </div>
+            </div>
+            
             <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
               <div className="flex items-center justify-center space-x-3">
                 <div className="bg-green-100 p-2 rounded-lg">
@@ -294,5 +339,3 @@ function App() {
 }
 
 export default App;
-  )
-}
