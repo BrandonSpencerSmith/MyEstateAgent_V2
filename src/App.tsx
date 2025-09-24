@@ -61,6 +61,7 @@ function App() {
               <a href="tel:+441234567890" className="hidden sm:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span className="text-sm">01234 567890</span>
+              </a>
             <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
               <div className="flex items-center justify-center space-x-3">
                 <div className="bg-green-100 p-2 rounded-lg">
