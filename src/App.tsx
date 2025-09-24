@@ -34,35 +34,43 @@ function App() {
       {/* Header */}
       <header className="border-b border-gray-100 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex flex-col sm:flex-row justify-between items-center py-3 sm:h-16">
             <div className="flex items-center space-x-2">
               <Home className="h-8 w-8 text-blue-600" />
               <span className="text-xl font-semibold text-gray-900">MyEstateAgent</span>
             </div>
             
-            <nav className="hidden md:flex space-x-8">
+            <nav className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mt-3 sm:mt-0 w-full sm:w-auto">
               <button 
                 onClick={() => setCurrentPage('buy')}
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
               >
                 Buy
               </button>
-              <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
+              <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center">Services</a>
               <button 
                 onClick={() => setCurrentPage('about')}
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
               >
                 About
               </button>
-              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center">Contact</a>
             </nav>
             
-            <div className="flex items-center space-x-4">
+            <div className="hidden sm:flex items-center space-x-4">
               <a href="tel:+441234567890" className="hidden sm:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span className="text-sm">01234 567890</span>
               </a>
             </div>
+          </div>
+          
+          {/* Mobile Phone Number - Separate Row */}
+          <div className="sm:hidden border-t border-gray-100 py-2">
+            <a href="tel:+441234567890" className="flex items-center justify-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+              <Phone className="h-4 w-4" />
+              <span className="text-sm">01234 567890</span>
+            </a>
           </div>
         </div>
       </header>
