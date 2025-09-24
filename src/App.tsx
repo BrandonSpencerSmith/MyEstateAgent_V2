@@ -62,6 +62,37 @@ function App() {
                 <Phone className="h-4 w-4" />
                 <span className="text-sm">01234 567890</span>
               </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 mx-auto max-w-4xl">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Find Your Perfect <span className="text-blue-600">Home</span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              Discover exceptional properties across the UK with MyEstateAgent. From charming cottages to luxury estates, 
+              we help you find the home of your dreams with expert guidance every step of the way.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => setCurrentPage('buy')}
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
+              >
+                Browse Properties
+              </button>
+              <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg">
+                Book Free Valuation
+              </button>
+            </div>
+          </div>
+
+          {/* Stats Cards */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
               <div className="flex items-center justify-center space-x-3">
                 <div className="bg-green-100 p-2 rounded-lg">
@@ -70,6 +101,30 @@ function App() {
                 <div>
                   <p className="text-sm text-gray-500">Properties Sold</p>
                   <p className="text-2xl font-bold text-gray-900">2,500+</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
+              <div className="flex items-center justify-center space-x-3">
+                <div className="bg-blue-100 p-2 rounded-lg">
+                  <Users className="h-6 w-6 text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Happy Clients</p>
+                  <p className="text-2xl font-bold text-gray-900">5,000+</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
+              <div className="flex items-center justify-center space-x-3">
+                <div className="bg-purple-100 p-2 rounded-lg">
+                  <Heart className="h-6 w-6 text-purple-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Years Experience</p>
+                  <p className="text-2xl font-bold text-gray-900">15+</p>
                 </div>
               </div>
             </div>
