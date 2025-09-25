@@ -1,13 +1,14 @@
 import React from 'react';
 import About from './components/About';
 import Buy from './components/Buy';
+import Rent from './components/Rent';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
 import { Home, Key, Users, Phone, Mail, MapPin, Search, Heart, TrendingUp } from 'lucide-react';
 
 function App() {
-  const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'privacy' | 'terms' | 'cookies'>('home');
+  const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'rent' | 'privacy' | 'terms' | 'cookies'>('home');
 
   if (currentPage === 'about') {
     return <About onBack={() => setCurrentPage('home')} />;
@@ -15,6 +16,10 @@ function App() {
 
   if (currentPage === 'buy') {
     return <Buy onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'rent') {
+    return <Rent onBack={() => setCurrentPage('home')} />;
   }
 
   if (currentPage === 'privacy') {
@@ -48,7 +53,7 @@ function App() {
                 Buy
               </button>
               <button 
-                onClick={() => console.log('Rent page coming soon')}
+                onClick={() => setCurrentPage('rent')}
                 className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
               >
                 Rent
