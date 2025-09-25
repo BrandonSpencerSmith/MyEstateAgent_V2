@@ -495,7 +495,7 @@ function Rent({ onBack }: RentProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/detached 2 istockphoto-2191490771-612x612.jpg" 
+                  src="/public/detached 2 istockphoto-2191490771-612x612.jpg" 
                   alt="Detached house on Lutterworth Road, Cosby"
                   className="w-full h-64 object-cover"
                 />
