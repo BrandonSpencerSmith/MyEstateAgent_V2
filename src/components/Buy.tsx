@@ -31,9 +31,9 @@ function Buy({ onBack }: BuyProps) {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-8 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 mx-auto max-w-4xl">
+          <div className="text-center mb-8 mx-auto max-w-4xl">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-center">
               Find Your Perfect <span className="text-blue-600">Home</span>
             </h1>
@@ -47,9 +47,9 @@ function Buy({ onBack }: BuyProps) {
       </section>
 
       {/* Property Listings */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Properties</h2>
             <p className="text-gray-600">Discover your perfect home in Leicestershire</p>
           </div>
