@@ -56,14 +56,13 @@ function Rent({ onBack }: RentProps) {
           {/* Property Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Property cards will be added here */}
-            {/* Each property card should follow this structure: */}
-            {/* 
+            {/* Macey Gardens Property */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+              {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="property-image-url" 
-                  alt="Property description"
+                  src="/public/detatched istockphoto-453534627-612x612.jpg" 
+                  alt="Detached house on Macey Gardens, Anstey"
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute top-4 left-4">
@@ -78,75 +77,117 @@ function Rent({ onBack }: RentProps) {
                 </div>
               </div>
 
+              {/* Property Details */}
               <div className="p-6">
                 <div className="flex flex-col justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">£1,200 pcm</h3>
-                    <p className="text-lg text-gray-600 mb-1">Property Address</p>
-                    <p className="text-sm text-gray-500">Area, Postcode</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">£1,950 pcm</h3>
+                    <p className="text-lg text-gray-600 mb-1">Macey Gardens, Anstey</p>
+                    <p className="text-sm text-gray-500">Leicestershire, LE7 7AZ</p>
                   </div>
                   <div className="mt-4">
-                    <span className="text-sm text-gray-500">Ref: REF-001</span>
+                    <span className="text-sm text-gray-500">Ref: MSA-MG-R001</span>
                   </div>
                 </div>
 
+                {/* Property Features */}
                 <div className="flex flex-wrap gap-6 mb-6">
                   <div className="flex items-center space-x-2">
                     <Bed className="h-5 w-5 text-blue-600" />
-                    <span className="text-gray-700">X Bedrooms</span>
+                    <span className="text-gray-700">4 Bedrooms</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Bath className="h-5 w-5 text-blue-600" />
-                    <span className="text-gray-700">X Bathrooms</span>
+                    <span className="text-gray-700">3 Bathrooms</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Car className="h-5 w-5 text-blue-600" />
-                    <span className="text-gray-700">X Parking Spaces</span>
+                    <span className="text-gray-700">2 Parking Spaces</span>
                   </div>
                 </div>
 
+                {/* Property Description */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Property Description</h4>
                   <p className="text-gray-600 leading-relaxed">
-                    Property description text goes here...
+                    A stunning four-bedroom detached family home available for rent in the desirable area of Anstey. 
+                    This impressive property features spacious accommodation throughout, including a large kitchen-diner, 
+                    separate lounge, and master bedroom with en-suite. The property boasts a private rear garden, 
+                    driveway parking for two cars, and is ideally located close to excellent schools and transport 
+                    links to Leicester city centre.
                   </p>
                 </div>
 
+                {/* Key Features */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h4>
                   <div className="grid grid-cols-1 gap-2">
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                        <span className="text-gray-600">Feature 1</span>
+                        <span className="text-gray-600">Four double bedrooms</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                        <span className="text-gray-600">Feature 2</span>
+                        <span className="text-gray-600">Large kitchen-diner with modern appliances</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Separate lounge and dining room</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Master bedroom with en-suite</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Private landscaped rear garden</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Driveway parking for 2 cars</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Gas central heating and double glazing</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Close to schools and transport links</span>
                       </li>
                     </ul>
                   </div>
                 </div>
 
+                {/* Property Information */}
                 <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 rounded-lg text-sm">
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-1">Property Type</h5>
-                    <p className="text-gray-600">House/Flat</p>
+                    <p className="text-gray-600">Detached House</p>
                   </div>
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-1">Furnished</h5>
-                    <p className="text-gray-600">Yes/No</p>
+                    <p className="text-gray-600">Unfurnished</p>
                   </div>
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-1">Available From</h5>
-                    <p className="text-gray-600">Date</p>
+                    <p className="text-gray-600">1st March 2025</p>
                   </div>
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-1">Deposit</h5>
-                    <p className="text-gray-600">£Amount</p>
+                    <p className="text-gray-600">£2,340</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Council Tax</h5>
+                    <p className="text-gray-600">Band E</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">EPC Rating</h5>
+                    <p className="text-gray-600">C (72)</p>
                   </div>
                 </div>
 
+                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
@@ -158,7 +199,6 @@ function Rent({ onBack }: RentProps) {
                 </div>
               </div>
             </div>
-            */}
 
           </div>
         </div>
