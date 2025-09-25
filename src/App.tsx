@@ -47,6 +47,12 @@ function App() {
               >
                 Buy
               </button>
+              <button 
+                onClick={() => console.log('Rent page coming soon')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Rent
+              </button>
               <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center">Services</a>
               <button 
                 onClick={() => setCurrentPage('about')}
