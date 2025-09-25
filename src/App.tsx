@@ -2,13 +2,14 @@ import React from 'react';
 import About from './components/About';
 import Buy from './components/Buy';
 import Rent from './components/Rent';
+import Sell from './components/Sell';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
 import { Home, Key, Users, Phone, Mail, MapPin, Search, Heart, TrendingUp } from 'lucide-react';
 
 function App() {
-  const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'rent' | 'privacy' | 'terms' | 'cookies'>('home');
+  const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'sell' | 'rent' | 'privacy' | 'terms' | 'cookies'>('home');
 
   if (currentPage === 'about') {
     return <About onBack={() => setCurrentPage('home')} />;
@@ -16,6 +17,10 @@ function App() {
 
   if (currentPage === 'buy') {
     return <Buy onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'sell') {
+    return <Sell onBack={() => setCurrentPage('home')} />;
   }
 
   if (currentPage === 'rent') {
@@ -51,6 +56,12 @@ function App() {
                 className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
               >
                 Buy
+              </button>
+              <button 
+                onClick={() => setCurrentPage('sell')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Sell
               </button>
               <button 
                 onClick={() => setCurrentPage('rent')}
