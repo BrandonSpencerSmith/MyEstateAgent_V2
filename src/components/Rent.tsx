@@ -489,7 +489,7 @@ function Rent({ onBack }: RentProps) {
                 </div>
               </div>
             </div>
-          </div>
+
             {/* Lutterworth Road Property */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
               {/* Property Image */}
@@ -634,6 +634,151 @@ function Rent({ onBack }: RentProps) {
                 </div>
               </div>
             </div>
+
+            {/* Robin Road Property */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+              {/* Property Image */}
+              <div className="relative">
+                <img 
+                  src="/flat_istockphoto-1421422160-612x612.jpg" 
+                  alt="Modern flat on Robin Road, Broughton Astley"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    For Rent
+                  </span>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <button className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors">
+                    <Heart className="h-5 w-5 text-gray-600 hover:text-red-500" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Property Details */}
+              <div className="p-6">
+                <div className="flex flex-col justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">£800 pcm</h3>
+                    <p className="text-lg text-gray-600 mb-1">Robin Road, Broughton Astley</p>
+                    <p className="text-sm text-gray-500">Leicestershire, LE9 6QS</p>
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-sm text-gray-500">Ref: MSA-RR-R005</span>
+                  </div>
+                </div>
+
+                {/* Property Features */}
+                <div className="flex flex-wrap gap-6 mb-6">
+                  <div className="flex items-center space-x-2">
+                    <Bed className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">2 Bedrooms</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Bath className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">1 Bathroom</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Car className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">1 Parking Space</span>
+                  </div>
+                </div>
+
+                {/* Property Description */}
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Property Description</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    A stylish two-bedroom modern flat available for rent in the popular village of Broughton Astley. 
+                    This contemporary apartment features an open-plan living area with modern kitchen, two well-proportioned 
+                    bedrooms, and a contemporary bathroom. The property benefits from allocated parking, communal gardens, 
+                    and is ideally located for commuters with excellent transport links to Leicester and Market Harborough. 
+                    Perfect for young professionals or couples seeking quality rental accommodation in a desirable location.
+                  </p>
+                </div>
+
+                {/* Key Features */}
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h4>
+                  <div className="grid grid-cols-1 gap-2">
+                    <ul className="space-y-2">
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Modern purpose-built flat</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Open-plan living/kitchen area</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Contemporary fitted kitchen</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Two double bedrooms</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Modern bathroom suite</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Allocated parking space</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Communal gardens</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Excellent transport links</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Property Information */}
+                <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 rounded-lg text-sm">
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Property Type</h5>
+                    <p className="text-gray-600">Flat/Apartment</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Furnished</h5>
+                    <p className="text-gray-600">Unfurnished</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Available From</h5>
+                    <p className="text-gray-600">15th March 2025</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Deposit</h5>
+                    <p className="text-gray-600">£960</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Council Tax</h5>
+                    <p className="text-gray-600">Band B</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">EPC Rating</h5>
+                    <p className="text-gray-600">B (86)</p>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                    <Calendar className="h-5 w-5" />
+                    <span>Book Viewing</span>
+                  </button>
+                  <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
+                    Request Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
