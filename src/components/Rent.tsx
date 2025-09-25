@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, ArrowLeft, Key, Users, Shield, Clock, CheckCircle, Calendar } from 'lucide-react';
+import { Home, ArrowLeft, Key, Users, Shield, Clock, CheckCircle, Calendar, Heart, Bath, Bed, Car } from 'lucide-react';
 
 interface RentProps {
   onBack: () => void;
@@ -49,78 +49,116 @@ function Rent({ onBack }: RentProps) {
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Rental Properties Coming Soon</h2>
-            <p className="text-gray-600">We're preparing an extensive collection of rental properties for you</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Rental Properties</h2>
+            <p className="text-gray-600">Discover your perfect rental home in Leicestershire</p>
           </div>
 
-          {/* Placeholder Cards */}
+          {/* Property Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Placeholder Card 1 */}
-            <div className="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-200">
-              <div className="h-64 bg-gray-200 flex items-center justify-center">
-                <div className="text-center">
-                  <Key className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Property Image</p>
+            {/* Property cards will be added here */}
+            {/* Each property card should follow this structure: */}
+            {/* 
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="relative">
+                <img 
+                  src="property-image-url" 
+                  alt="Property description"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    For Rent
+                  </span>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <button className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors">
+                    <Heart className="h-5 w-5 text-gray-600 hover:text-red-500" />
+                  </button>
                 </div>
               </div>
-              <div className="p-6">
-                <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-gray-400 mb-2">Property Title</h3>
-                  <p className="text-gray-400">Location details will appear here</p>
-                </div>
-                <div className="flex items-center space-x-4 mb-4">
-                  <span className="text-gray-400">Bedrooms • Bathrooms • Features</span>
-                </div>
-                <div className="bg-gray-100 rounded-lg p-4">
-                  <p className="text-gray-400 text-sm">Property description and key features will be displayed here</p>
-                </div>
-              </div>
-            </div>
 
-            {/* Placeholder Card 2 */}
-            <div className="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-200">
-              <div className="h-64 bg-gray-200 flex items-center justify-center">
-                <div className="text-center">
-                  <Key className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Property Image</p>
-                </div>
-              </div>
               <div className="p-6">
-                <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-gray-400 mb-2">Property Title</h3>
-                  <p className="text-gray-400">Location details will appear here</p>
+                <div className="flex flex-col justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">£1,200 pcm</h3>
+                    <p className="text-lg text-gray-600 mb-1">Property Address</p>
+                    <p className="text-sm text-gray-500">Area, Postcode</p>
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-sm text-gray-500">Ref: REF-001</span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-4 mb-4">
-                  <span className="text-gray-400">Bedrooms • Bathrooms • Features</span>
-                </div>
-                <div className="bg-gray-100 rounded-lg p-4">
-                  <p className="text-gray-400 text-sm">Property description and key features will be displayed here</p>
-                </div>
-              </div>
-            </div>
 
-            {/* Placeholder Card 3 */}
-            <div className="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-200">
-              <div className="h-64 bg-gray-200 flex items-center justify-center">
-                <div className="text-center">
-                  <Key className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Property Image</p>
+                <div className="flex flex-wrap gap-6 mb-6">
+                  <div className="flex items-center space-x-2">
+                    <Bed className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">X Bedrooms</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Bath className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">X Bathrooms</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Car className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">X Parking Spaces</span>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-gray-400 mb-2">Property Title</h3>
-                  <p className="text-gray-400">Location details will appear here</p>
+
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Property Description</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    Property description text goes here...
+                  </p>
                 </div>
-                <div className="flex items-center space-x-4 mb-4">
-                  <span className="text-gray-400">Bedrooms • Bathrooms • Features</span>
+
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h4>
+                  <div className="grid grid-cols-1 gap-2">
+                    <ul className="space-y-2">
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Feature 1</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                        <span className="text-gray-600">Feature 2</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="bg-gray-100 rounded-lg p-4">
-                  <p className="text-gray-400 text-sm">Property description and key features will be displayed here</p>
+
+                <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 rounded-lg text-sm">
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Property Type</h5>
+                    <p className="text-gray-600">House/Flat</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Furnished</h5>
+                    <p className="text-gray-600">Yes/No</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Available From</h5>
+                    <p className="text-gray-600">Date</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Deposit</h5>
+                    <p className="text-gray-600">£Amount</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                    <Calendar className="h-5 w-5" />
+                    <span>Book Viewing</span>
+                  </button>
+                  <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
+                    Request Details
+                  </button>
                 </div>
               </div>
             </div>
+            */}
 
           </div>
         </div>
