@@ -10,7 +10,7 @@
     "prerender": "node scripts/prerender.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:netlify": "npm run build && cp public/_redirects dist/"
+    "build:netlify": "npm run build:ssg && cp public/_redirects dist/"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

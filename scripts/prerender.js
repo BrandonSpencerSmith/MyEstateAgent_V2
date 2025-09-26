@@ -1,9 +1,10 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const puppeteer = require('puppeteer');
 
 // Routes to pre-render
-const routes = [
+const coreRoutes = [
   '/',
   '/about',
   '/buy', 
@@ -16,54 +17,29 @@ const routes = [
   '/cookies'
 ];
 
-// Function to generate static HTML for each route
-async function prerenderRoutes() {
-  console.log('🚀 Starting pre-rendering process...');
-  
-  const distPath = path.join(__dirname, '../dist');
-  
-  // Ensure dist directory exists
-  if (!fs.existsSync(distPath)) {
-    console.error('❌ Dist directory not found. Run "npm run build" first.');
-    process.exit(1);
+// Function to load property listings and generate routes
+function getListingRoutes() {
+  try {
+    const listingsPath = path.join(__dirname, '../src/data/listings.json');
+    const listingsData = fs.readFileSync(listingsPath, 'utf-8');
+    const listings = JSON.parse(listingsData);
+    
+    const listingRoutes = listings.map(listing => `/listings/${listing.slug}`);
+    console.log(`📋 Found ${listings.length} property listings for pre-rendering`);
+    return listingRoutes;
+  } catch (error) {
+    console.warn('⚠️ Could not load listings.json, skipping dynamic routes:', error.message);
+    return [];
   }
-
-  // Read the main index.html template
-  const indexPath = path.join(distPath, 'index.html');
-  const indexTemplate = fs.readFileSync(indexPath, 'utf-8');
-
-  console.log(`📄 Pre-rendering ${routes.length} routes...`);
-
-  // Create HTML files for each route
-  routes.forEach(route => {
-    const routePath = route === '/' ? 'index' : route.slice(1);
-    const fileName = route === '/' ? 'index.html' : `${routePath}.html`;
-    const filePath = path.join(distPath, fileName);
-    
-    // Create route-specific HTML with proper meta tags
-    let routeHtml = indexTemplate;
-    
-    // Add route-specific meta tags and content
-    const metaTags = getMetaTagsForRoute(route);
-    routeHtml = routeHtml.replace(
-      '<title>MyEstateAgent</title>',
-      `<title>${metaTags.title}</title>
-      <meta name="description" content="${metaTags.description}">
-      <meta property="og:title" content="${metaTags.title}">
-      <meta property="og:description" content="${metaTags.description}">
-      <meta property="og:url" content="https://your-domain.com${route}">
-      <link rel="canonical" href="https://your-domain.com${route}">`
-    );
-    
-    // Write the HTML file
-    fs.writeFileSync(filePath, routeHtml);
-    console.log(`✅ Generated: ${fileName}`);
-  });
-
-  console.log('🎉 Pre-rendering completed successfully!');
 }
 
-// Get meta tags for each route
+// Combine all routes
+const allRoutes = [
+  ...coreRoutes,
+  ...getListingRoutes()
+];
+
+// Function to get meta tags for each route
 function getMetaTagsForRoute(route) {
   const metaData = {
     '/': {
@@ -108,7 +84,125 @@ function getMetaTagsForRoute(route) {
     }
   };
 
+  // Default meta for property listings
+  if (route.startsWith('/listings/')) {
+    const slug = route.replace('/listings/', '');
+    const propertyName = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    return {
+      title: `${propertyName} - Property Details | MyEstateAgent`,
+      description: `View detailed information about this property at ${propertyName}. Contact MyEstateAgent for viewings and more information.`
+    };
+  }
+
   return metaData[route] || metaData['/'];
+}
+
+// Function to pre-render routes using Puppeteer
+async function prerenderRoutes() {
+  console.log('🚀 Starting pre-rendering process...');
+  
+  const distPath = path.join(__dirname, '../dist');
+  
+  // Ensure dist directory exists
+  if (!fs.existsSync(distPath)) {
+    console.error('❌ Dist directory not found. Run "npm run build" first.');
+    process.exit(1);
+  }
+
+  // Read the main index.html template
+  const indexPath = path.join(distPath, 'index.html');
+  if (!fs.existsSync(indexPath)) {
+    console.error('❌ index.html not found in dist directory.');
+    process.exit(1);
+  }
+
+  const indexTemplate = fs.readFileSync(indexPath, 'utf-8');
+  console.log(`📄 Pre-rendering ${allRoutes.length} routes...`);
+
+  // Launch Puppeteer for dynamic rendering
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+
+  try {
+    // Start a local server for rendering
+    const { spawn } = require('child_process');
+    const server = spawn('npx', ['vite', 'preview', '--port', '4173'], {
+      stdio: 'pipe',
+      cwd: path.join(__dirname, '..')
+    });
+
+    // Wait for server to start
+    await new Promise(resolve => setTimeout(resolve, 3000));
+
+    for (const route of allRoutes) {
+      try {
+        const page = await browser.newPage();
+        
+        // Navigate to the route
+        const url = `http://localhost:4173${route}`;
+        await page.goto(url, { 
+          waitUntil: 'networkidle0',
+          timeout: 30000 
+        });
+
+        // Wait for React to render
+        await page.waitForTimeout(2000);
+
+        // Get the rendered HTML
+        const html = await page.content();
+        
+        // Add route-specific meta tags
+        const metaTags = getMetaTagsForRoute(route);
+        const enhancedHtml = html.replace(
+          '<title>MyEstateAgent</title>',
+          `<title>${metaTags.title}</title>
+          <meta name="description" content="${metaTags.description}">
+          <meta property="og:title" content="${metaTags.title}">
+          <meta property="og:description" content="${metaTags.description}">
+          <meta property="og:url" content="https://your-domain.com${route}">
+          <link rel="canonical" href="https://your-domain.com${route}">`
+        );
+
+        // Determine output file path
+        let fileName;
+        if (route === '/') {
+          fileName = 'index.html';
+        } else if (route.startsWith('/listings/')) {
+          // Create listings directory if it doesn't exist
+          const listingsDir = path.join(distPath, 'listings');
+          if (!fs.existsSync(listingsDir)) {
+            fs.mkdirSync(listingsDir, { recursive: true });
+          }
+          const slug = route.replace('/listings/', '');
+          fileName = path.join('listings', `${slug}.html`);
+        } else {
+          fileName = `${route.slice(1)}.html`;
+        }
+
+        const filePath = path.join(distPath, fileName);
+        
+        // Write the HTML file
+        fs.writeFileSync(filePath, enhancedHtml);
+        console.log(`✅ Generated: ${fileName}`);
+        
+        await page.close();
+      } catch (error) {
+        console.error(`❌ Failed to render ${route}:`, error.message);
+      }
+    }
+
+    // Kill the preview server
+    server.kill();
+
+  } catch (error) {
+    console.error('❌ Pre-rendering failed:', error);
+  } finally {
+    await browser.close();
+  }
+
+  console.log('🎉 Pre-rendering completed successfully!');
 }
 
 // Run the pre-rendering
