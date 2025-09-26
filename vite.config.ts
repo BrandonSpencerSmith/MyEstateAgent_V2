@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import prerender from 'vite-plugin-prerender';
-import { readFileSync } from 'fs';
-import { resolve } from 'path';
+import { createRequire } from 'node:module';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// Create require function for CommonJS compatibility
+const require = createRequire(import.meta.url);
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // Load property listings to generate dynamic routes
 function getListingRoutes() {
