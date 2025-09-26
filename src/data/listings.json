@@ -1,0 +1,92 @@
+[
+  {
+    "id": "msa-ss-001",
+    "slug": "school-lane-stoney-stanton",
+    "title": "School Lane, Stoney Stanton",
+    "price": 250000,
+    "type": "sale",
+    "bedrooms": 3,
+    "bathrooms": 2
+  },
+  {
+    "id": "msa-bl-002", 
+    "slug": "bumblebee-lane-desford",
+    "title": "Bumblebee Lane, Desford",
+    "price": 470000,
+    "type": "sale",
+    "bedrooms": 4,
+    "bathrooms": 3
+  },
+  {
+    "id": "msa-rr-003",
+    "slug": "ridge-road-thurlaston", 
+    "title": "Ridge Road, Thurlaston",
+    "price": 175000,
+    "type": "sale",
+    "bedrooms": 2,
+    "bathrooms": 1
+  },
+  {
+    "id": "msa-ld-004",
+    "slug": "lilac-drive-gilmorton",
+    "title": "Lilac Drive, Gilmorton", 
+    "price": 395000,
+    "type": "sale",
+    "bedrooms": 4,
+    "bathrooms": 2
+  },
+  {
+    "id": "msa-pr-005",
+    "slug": "pebble-rise-elmesthorpe",
+    "title": "Pebble Rise, Elmesthorpe",
+    "price": 145000,
+    "type": "sale", 
+    "bedrooms": 2,
+    "bathrooms": 1
+  },
+  {
+    "id": "msa-mg-r001",
+    "slug": "macey-gardens-anstey",
+    "title": "Macey Gardens, Anstey",
+    "price": 1950,
+    "type": "rent",
+    "bedrooms": 4,
+    "bathrooms": 3
+  },
+  {
+    "id": "msa-fc-r002",
+    "slug": "fallow-close-willoughby-waterleys",
+    "title": "Fallow Close, Willoughby Waterleys",
+    "price": 1400,
+    "type": "rent",
+    "bedrooms": 3,
+    "bathrooms": 2
+  },
+  {
+    "id": "msa-bs-r003",
+    "slug": "back-street-braunstone-town",
+    "title": "Back Street, Braunstone Town", 
+    "price": 1250,
+    "type": "rent",
+    "bedrooms": 3,
+    "bathrooms": 1
+  },
+  {
+    "id": "msa-lr-r004",
+    "slug": "lutterworth-road-cosby",
+    "title": "Lutterworth Road, Cosby",
+    "price": 2000,
+    "type": "rent",
+    "bedrooms": 4,
+    "bathrooms": 3
+  },
+  {
+    "id": "msa-rr-r005",
+    "slug": "robin-road-broughton-astley",
+    "title": "Robin Road, Broughton Astley",
+    "price": 800,
+    "type": "rent",
+    "bedrooms": 2,
+    "bathrooms": 1
+  }
+]
