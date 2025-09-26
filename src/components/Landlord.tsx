@@ -15,7 +15,7 @@ function Landlord({ onBack }: LandlordProps) {
   const faqs = [
     {
       question: "What are your management fees and how are they structured?",
-      answer: "Our management fees range from 8-12% of monthly rental income depending on the service package. Essential package is 12%, Professional is 10%, and Premium is 8%. All fees are only charged when rent is collected, so if there's no rental income, there's no management fee."
+      answer: "Our management fees are dependent on which service package is chosen, with different rates for Essential, Professional, and Premium packages. All fees are only charged when rent is collected, so if there's no rental income, there's no management fee."
     },
     {
       question: "How do you screen potential tenants?",
