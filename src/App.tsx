@@ -24,6 +24,17 @@ function App() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // Dispatch render-complete event when home page is fully loaded
+  React.useEffect(() => {
+    if (currentPage === 'home') {
+      const timer = setTimeout(() => {
+        document.dispatchEvent(new Event('render-complete'));
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [currentPage]);
+
   if (currentPage === 'about') {
     return <About onBack={() => setCurrentPage('home')} />;
   }
