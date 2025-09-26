@@ -1,4 +1,6 @@
 import React from 'react';
+import ValuationPopup from './components/ValuationPopup';
+import { useValuationPopup } from './hooks/useValuationPopup';
 import About from './components/About';
 import Buy from './components/Buy';
 import Rent from './components/Rent';
@@ -12,6 +14,7 @@ import { Home, Key, Users, Phone, Mail, MapPin, Search, Heart, TrendingUp } from
 
 function App() {
   const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'sell' | 'rent' | 'landlord' | 'services' | 'privacy' | 'terms' | 'cookies'>('home');
+  const { isPopupOpen, openPopup, closePopup, handleVirtualAssistant, handleStandardForm } = useValuationPopup();
 
   // Scroll to top when navigating to a new page
   React.useEffect(() => {
@@ -133,7 +136,10 @@ function App() {
               >
                 Browse Properties
               </button>
-              <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg">
+              <button 
+                onClick={openPopup}
+                className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg"
+              >
                 Book Free Valuation
               </button>
             </div>
@@ -393,6 +399,14 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Valuation Popup */}
+      <ValuationPopup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        onUseVirtualAssistant={handleVirtualAssistant}
+        onContinueToForm={handleStandardForm}
+      />
     </div>
   );
 }
