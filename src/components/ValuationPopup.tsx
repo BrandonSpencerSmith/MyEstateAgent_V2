@@ -28,10 +28,10 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
             <Bot className="h-8 w-8 text-blue-600" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Get Your Property Valuation Instantly
+            Get Your Property Valuation
           </h2>
           <p className="text-gray-600">
-            Our AI-powered virtual assistant provides instant property valuations with expert-level accuracy, available 24/7
+            Our AI-powered virtual assistant provides property valuations with expert-level accuracy, available 24/7
           </p>
         </div>
 
@@ -47,7 +47,7 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
                 <div className="bg-green-100 p-1 rounded-full">
                   <Zap className="h-4 w-4 text-green-600" />
                 </div>
-                <span className="text-sm text-gray-700">Instant results - Get your valuation in under 2 minutes</span>
+                <span className="text-sm text-gray-700">Quick results - Get your valuation in under 2 minutes</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
@@ -82,7 +82,7 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
               </div>
               <div className="flex items-center space-x-2">
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">2</div>
-                <span>Get instant market analysis and valuation</span>
+                <span>Get comprehensive market analysis and valuation</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">3</div>
@@ -111,7 +111,7 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
             </p>
             <p className="text-xs text-green-700">
               Our AI assistant uses the same data and methodology as professional valuers, 
-              with instant results and unlimited questions
+              with comprehensive results and unlimited questions
             </p>
           </div>
         </div>
