@@ -68,7 +68,7 @@ function Rent({ onBack }: RentProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/detatched istockphoto-453534627-612x612.jpg" 
+                  src="/detatched istockphoto-453534627-612x612.jpg" 
                   alt="Detached house on Macey Gardens, Anstey"
                   className="w-full h-64 object-cover"
                 />
@@ -211,7 +211,7 @@ function Rent({ onBack }: RentProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/semi istockphoto-96268939-612x612.jpg" 
+                  src="/semi istockphoto-96268939-612x612.jpg" 
                   alt="Semi-detached house on Fallow Close, Willoughby Waterleys"
                   className="w-full h-64 object-cover"
                 />
@@ -355,7 +355,7 @@ function Rent({ onBack }: RentProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/semi 2 istockphoto-511475808-612x612.jpg" 
+                  src="/semi 2 istockphoto-511475808-612x612.jpg" 
                   alt="Semi-detached house on Back Street, Braunstone Town"
                   className="w-full h-64 object-cover"
                 />

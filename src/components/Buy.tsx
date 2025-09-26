@@ -69,7 +69,7 @@ function Buy({ onBack }: BuyProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/files_4699348-1758720071500-image.png" 
+                  src="/files_4699348-1758720071500-image.png" 
                   alt="Semi-detached house on School Lane, Stoney Stanton"
                   className="w-full h-64 object-cover"
                 />
@@ -211,7 +211,7 @@ function Buy({ onBack }: BuyProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/image.png" 
+                  src="/image.png" 
                   alt="Detached house on Bumblebee Lane, Desford"
                   className="w-full h-64 object-cover"
                 />
@@ -353,7 +353,7 @@ function Buy({ onBack }: BuyProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/image copy.png" 
+                  src="/image copy.png" 
                   alt="Terraced house on Ridge Road, Thurlaston"
                   className="w-full h-64 object-cover"
                 />
@@ -495,7 +495,7 @@ function Buy({ onBack }: BuyProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/image copy copy.png" 
+                  src="/image copy copy.png" 
                   alt="Detached house on Lilac Drive, Gilmorton"
                   className="w-full h-64 object-cover"
                 />
@@ -638,7 +638,7 @@ function Buy({ onBack }: BuyProps) {
               {/* Property Image */}
               <div className="relative">
                 <img 
-                  src="/public/image copy copy copy.png" 
+                  src="/image copy copy copy.png" 
                   alt="Modern flat on Pebble Rise, Elmesthorpe"
                   className="w-full h-64 object-cover"
                 />
