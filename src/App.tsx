@@ -80,6 +80,12 @@ function App() {
                 Rent
               </button>
               <button 
+                onClick={() => setCurrentPage('landlord')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Landlord
+              </button>
+              <button 
                 onClick={() => setCurrentPage('services')}
                 className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
               >
