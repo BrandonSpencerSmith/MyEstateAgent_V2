@@ -1,4 +1,6 @@
 import React from 'react';
+import ValuationPopup from './ValuationPopup';
+import { useValuationPopup } from '../hooks/useValuationPopup';
 import { Home, ArrowLeft, TrendingUp, Camera, Users, Award, Clock, CheckCircle, Calendar, Star, Phone, Mail, MapPin, Target, Shield, Zap } from 'lucide-react';
 
 interface SellProps {
@@ -6,6 +8,8 @@ interface SellProps {
 }
 
 function Sell({ onBack }: SellProps) {
+  const { isPopupOpen, openPopup, closePopup, handleVirtualAssistant, handleStandardForm } = useValuationPopup();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -42,7 +46,10 @@ function Sell({ onBack }: SellProps) {
               Our experienced team will guide you through every step of the selling process.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
+              <button 
+                onClick={openPopup}
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
+              >
                 Get Free Property Valuation
               </button>
               <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg">
@@ -525,7 +532,10 @@ function Sell({ onBack }: SellProps) {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
+            <button 
+              onClick={openPopup}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
+            >
               Book Free Valuation
             </button>
             <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg">
@@ -556,6 +566,14 @@ function Sell({ onBack }: SellProps) {
           </div>
         </div>
       </section>
+
+      {/* Valuation Popup */}
+      <ValuationPopup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        onUseVirtualAssistant={handleVirtualAssistant}
+        onContinueToForm={handleStandardForm}
+      />
     </div>
   );
 }

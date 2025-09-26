@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ValuationPopup from './ValuationPopup';
+import { useValuationPopup } from '../hooks/useValuationPopup';
 import { Home, ArrowLeft, Key, Users, Shield, Clock, CheckCircle, Calendar, Star, Phone, Mail, MapPin, Target, Award, TrendingUp, FileText, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface LandlordProps {
@@ -7,6 +9,7 @@ interface LandlordProps {
 
 function Landlord({ onBack }: LandlordProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const { isPopupOpen, openPopup, closePopup, handleVirtualAssistant, handleStandardForm } = useValuationPopup();
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -91,7 +94,10 @@ function Landlord({ onBack }: LandlordProps) {
               From tenant screening to maintenance coordination, we handle everything so you can enjoy 
               the benefits of property ownership without the daily hassles.
             </p>
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
+            <button 
+              onClick={openPopup}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
+            >
               Get Your Free Property Assessment
             </button>
           </div>
@@ -574,7 +580,10 @@ function Landlord({ onBack }: LandlordProps) {
           </div>
           
           <div className="flex justify-center mb-8">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
+            <button 
+              onClick={openPopup}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
+            >
               Get Free Property Assessment
             </button>
           </div>
@@ -602,6 +611,14 @@ function Landlord({ onBack }: LandlordProps) {
           </div>
         </div>
       </section>
+
+      {/* Valuation Popup */}
+      <ValuationPopup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        onUseVirtualAssistant={handleVirtualAssistant}
+        onContinueToForm={handleStandardForm}
+      />
     </div>
   );
 }

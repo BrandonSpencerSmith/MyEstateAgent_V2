@@ -1,4 +1,6 @@
 import React from 'react';
+import ValuationPopup from './ValuationPopup';
+import { useValuationPopup } from '../hooks/useValuationPopup';
 import { Home, ArrowLeft, Search, TrendingUp, Key, Users, Award, Clock, CheckCircle, Calendar, Star, Phone, Mail, MapPin, Target, Shield, Zap, Camera, Heart } from 'lucide-react';
 
 interface ServicesProps {
@@ -7,6 +9,8 @@ interface ServicesProps {
 }
 
 function Services({ onBack, onNavigate }: ServicesProps) {
+  const { isPopupOpen, openPopup, closePopup, handleVirtualAssistant, handleStandardForm } = useValuationPopup();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -163,8 +167,11 @@ function Services({ onBack, onNavigate }: ServicesProps) {
                 </li>
               </ul>
               <div className="mt-auto">
-                <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium w-full">
-                Get Free Valuation
+                <button 
+                  onClick={openPopup}
+                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium w-full"
+                >
+                  Get Free Valuation
                 </button>
               </div>
             </div>
@@ -414,6 +421,14 @@ function Services({ onBack, onNavigate }: ServicesProps) {
           </button>
         </div>
       </section>
+
+      {/* Valuation Popup */}
+      <ValuationPopup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        onUseVirtualAssistant={handleVirtualAssistant}
+        onContinueToForm={handleStandardForm}
+      />
     </div>
   );
 }
