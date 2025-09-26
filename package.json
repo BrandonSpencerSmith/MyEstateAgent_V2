@@ -6,11 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:ssg": "vite build && npm run prerender",
-    "prerender": "node scripts/prerender.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:netlify": "npm run build:ssg && cp public/_redirects dist/"
+    "build:netlify": "npm run build && cp public/_redirects dist/"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
@@ -19,7 +17,6 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@prerenderer/renderer-puppeteer": "^3.4.4",
     "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
@@ -31,9 +28,9 @@
     "globals": "^15.9.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
-    "terser": "^5.19.2",
     "typescript": "^5.5.3",
-    "vite": "^5.4.2",
-    "vite-plugin-prerender": "^4.2.3"
+    "typescript-eslint": "^8.3.0",
+    "terser": "^5.19.2",
+    "vite": "^5.4.2"
   }
 }

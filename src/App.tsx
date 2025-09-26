@@ -19,18 +19,6 @@ function App() {
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
   const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
 
-  // Trigger render event for pre-rendering
-  React.useEffect(() => {
-    // Dispatch custom event to signal page is ready for pre-rendering
-    const timer = setTimeout(() => {
-      if (typeof window !== 'undefined') {
-        window.dispatchEvent(new Event('render-event'));
-      }
-    }, 1000);
-    
-    return () => clearTimeout(timer);
-  }, [currentPage]);
-
   // Scroll to top when navigating to a new page
   React.useEffect(() => {
     window.scrollTo(0, 0);
