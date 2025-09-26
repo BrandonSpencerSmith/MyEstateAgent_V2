@@ -39,7 +39,7 @@ function App() {
   }
 
   if (currentPage === 'services') {
-    return <Services onBack={() => setCurrentPage('home')} />;
+    return <Services onBack={() => setCurrentPage('home')} onNavigate={setCurrentPage} />;
   }
 
   if (currentPage === 'privacy') {

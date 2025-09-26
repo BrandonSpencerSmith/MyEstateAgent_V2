@@ -3,9 +3,10 @@ import { Home, ArrowLeft, Search, TrendingUp, Key, Users, Award, Clock, CheckCir
 
 interface ServicesProps {
   onBack: () => void;
+  onNavigate: (page: string) => void;
 }
 
-function Services({ onBack }: ServicesProps) {
+function Services({ onBack, onNavigate }: ServicesProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -80,7 +81,10 @@ function Services({ onBack }: ServicesProps) {
                   <span>Viewing arrangements</span>
                 </li>
               </ul>
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium w-full">
+              <button 
+                onClick={() => onNavigate('buy')}
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium w-full"
+              >
                 Start Property Search
               </button>
             </div>
