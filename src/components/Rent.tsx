@@ -1,6 +1,8 @@
 import React from 'react';
 import ValuationPopup from './ValuationPopup';
 import { useValuationPopup } from '../hooks/useValuationPopup';
+import ConsultationPopup from './ConsultationPopup';
+import { useConsultationPopup } from '../hooks/useConsultationPopup';
 import { Home, ArrowLeft, Key, Users, Shield, Clock, CheckCircle, Calendar, Heart, Bath, Bed, Car } from 'lucide-react';
 
 interface RentProps {
@@ -9,6 +11,7 @@ interface RentProps {
 
 function Rent({ onBack }: RentProps) {
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
+  const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
 
   return (
     <div className="min-h-screen bg-white">
@@ -907,7 +910,10 @@ function Rent({ onBack }: RentProps) {
             Get in touch with our expert team today and let us help you find the perfect rental property.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+            <button 
+              onClick={openConsultation}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            >
               Register Your Interest
             </button>
             <button 
@@ -925,6 +931,12 @@ function Rent({ onBack }: RentProps) {
         isOpen={isPopupOpen}
         onClose={closePopup}
         onUseVirtualAssistant={handleUseVirtualAssistant}
+      />
+
+      {/* Consultation Popup */}
+      <ConsultationPopup
+        isOpen={isConsultationOpen}
+        onClose={closeConsultation}
       />
     </div>
   );
