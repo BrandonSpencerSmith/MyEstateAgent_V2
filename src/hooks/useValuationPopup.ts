@@ -27,9 +27,12 @@ export function useValuationPopup() {
       });
     }
     
-    // Here you would integrate with your virtual assistant/chatbot
-    console.log('Starting virtual assistant valuation...');
-    alert('🤖 Virtual Assistant Starting!\n\nOur AI-powered valuation assistant will now help you get an instant property valuation. You\'ll be able to ask questions and get detailed market insights in real-time!');
+    // Launch Voiceflow chat
+    if (typeof window !== 'undefined' && (window as any).voiceflow?.chat?.open) {
+      (window as any).voiceflow.chat.open();
+    }
+    
+    // Close the popup
     closePopup();
   };
 
