@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Bot, Zap, Clock, MessageCircle, Star, CheckCircle } from 'lucide-react';
+import { X, Bot, Zap, Clock, MessageCircle, Star, CheckCircle, Users, Shield } from 'lucide-react';
 
 interface ValuationPopupProps {
   isOpen: boolean;
@@ -28,50 +28,50 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
             <Bot className="h-8 w-8 text-blue-600" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Get Your Property Valuation
+            Meet Our Virtual Agent
           </h2>
           <p className="text-gray-600">
-            Our AI-powered virtual assistant provides property valuations with expert-level accuracy, available 24/7
+            Get personalized property assistance with our AI-powered virtual agent, available 24/7 to help with all your property needs
           </p>
         </div>
 
-        {/* Virtual Assistant Benefits */}
+        {/* Virtual Agent Benefits */}
         <div className="px-6 pb-4">
           <div className="bg-blue-50 p-4 rounded-lg mb-4">
             <h3 className="font-semibold text-gray-900 mb-3 text-center flex items-center justify-center space-x-2">
               <Star className="h-5 w-5 text-blue-600" />
-              <span>Why Choose Our Virtual Assistant?</span>
+              <span>Why Choose Our Virtual Agent?</span>
             </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
-                  <Zap className="h-4 w-4 text-green-600" />
-                </div>
-                <span className="text-sm text-gray-700">Quick results - Get your valuation in under 2 minutes</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="bg-green-100 p-1 rounded-full">
                   <Clock className="h-4 w-4 text-green-600" />
                 </div>
-                <span className="text-sm text-gray-700">Available 24/7 - No waiting for office hours</span>
+                <span className="text-sm text-gray-700">Available 24/7 - Get help anytime, anywhere</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
                   <MessageCircle className="h-4 w-4 text-green-600" />
                 </div>
-                <span className="text-sm text-gray-700">Interactive chat - Ask questions and get detailed explanations</span>
+                <span className="text-sm text-gray-700">Guided conversations - Smart questions to understand your needs</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
-                  <CheckCircle className="h-4 w-4 text-green-600" />
+                  <Zap className="h-4 w-4 text-green-600" />
                 </div>
-                <span className="text-sm text-gray-700">Comprehensive analysis - Market trends, comparable sales, and more</span>
+                <span className="text-sm text-gray-700">Quick responses - Get immediate answers to property questions</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
-                  <Star className="h-4 w-4 text-green-600" />
+                  <Users className="h-4 w-4 text-green-600" />
                 </div>
-                <span className="text-sm text-gray-700">Expert follow-up - Connected directly to our qualified RICS valuers</span>
+                <span className="text-sm text-gray-700">Expert connection - Seamlessly connects you to our specialists</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="bg-green-100 p-1 rounded-full">
+                  <Shield className="h-4 w-4 text-green-600" />
+                </div>
+                <span className="text-sm text-gray-700">Secure & private - Your information is protected and confidential</span>
               </div>
             </div>
           </div>
@@ -80,19 +80,19 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
         {/* How It Works */}
         <div className="px-6 pb-4">
           <div className="bg-gray-50 p-4 rounded-lg">
-            <h3 className="font-semibold text-gray-900 mb-3 text-center">How It Works:</h3>
+            <h3 className="font-semibold text-gray-900 mb-3 text-center">How Our Virtual Agent Helps:</h3>
             <div className="space-y-2 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">1</div>
-                <span>Tell our AI assistant about your property</span>
+                <span>Ask about your property goals and requirements</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">2</div>
-                <span>Get comprehensive market analysis and valuation</span>
+                <span>Provide tailored advice and property insights</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">3</div>
-                <span>Ask follow-up questions and get expert insights</span>
+                <span>Connect you with the right specialist for your needs</span>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
             className="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg flex items-center justify-center space-x-2"
           >
             <Bot className="h-6 w-6" />
-            <span>Start Virtual Assistant Valuation</span>
+            <span>Talk to Our Virtual Agent</span>
           </button>
         </div>
 
@@ -113,10 +113,10 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
         <div className="px-6 pb-6">
           <div className="bg-green-50 p-4 rounded-lg text-center">
             <p className="text-sm text-green-800 font-medium mb-2">
-              ✨ Trusted by 10,000+ Property Owners
+              ✨ Trusted by Thousands of Property Customers
             </p>
             <p className="text-xs text-green-700">
-              Our virtual assistant provides property valuations with expert-level accuracy, available 24/7
+              Our Virtual Agent provides expert guidance and connects you with qualified property professionals
             </p>
           </div>
         </div>
