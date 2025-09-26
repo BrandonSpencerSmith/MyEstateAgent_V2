@@ -49,23 +49,30 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
                 </div>
                 <span className="text-sm text-gray-700">Quick results - Get your valuation in under 2 minutes</span>
               </div>
+              <div className="flex items-center space-x-3">
+                <div className="bg-green-100 p-1 rounded-full">
+                  <Clock className="h-4 w-4 text-green-600" />
+                </div>
                 <span className="text-sm text-gray-700">Available 24/7 - No waiting for office hours</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
                   <MessageCircle className="h-4 w-4 text-green-600" />
                 </div>
-                <span className="text-sm text-gray-700">Available 24/7 - No waiting for office hours</span>
                 <span className="text-sm text-gray-700">Interactive chat - Ask questions and get detailed explanations</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
                   <CheckCircle className="h-4 w-4 text-green-600" />
                 </div>
-                <span className="text-sm text-gray-700">Interactive chat - Ask questions and get detailed explanations</span>
                 <span className="text-sm text-gray-700">Comprehensive analysis - Market trends, comparable sales, and more</span>
               </div>
-              <span className="text-sm text-gray-700">Expert follow-up - Connected directly to our qualified RICS valuers</span>
+              <div className="flex items-center space-x-3">
+                <div className="bg-green-100 p-1 rounded-full">
+                  <Star className="h-4 w-4 text-green-600" />
+                </div>
+                <span className="text-sm text-gray-700">Expert follow-up - Connected directly to our qualified RICS valuers</span>
+              </div>
             </div>
           </div>
         </div>
@@ -79,17 +86,14 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">1</div>
                 <span>Tell our AI assistant about your property</span>
               </div>
-              <span>Our AI assistant gathers your property information</span>
               <div className="flex items-center space-x-2">
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">2</div>
                 <span>Get comprehensive market analysis and valuation</span>
               </div>
-              <span>Your details are passed to our qualified valuers</span>
               <div className="flex items-center space-x-2">
                 <div className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">3</div>
                 <span>Ask follow-up questions and get expert insights</span>
               </div>
-              <span>Receive your professional valuation from our experts</span>
             </div>
           </div>
         </div>
@@ -103,7 +107,6 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
             <Bot className="h-6 w-6" />
             <span>Start Virtual Assistant Valuation</span>
           </button>
-          <span>Start Virtual Assistant Booking</span>
         </div>
 
         {/* Trust Indicators */}
@@ -115,6 +118,7 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
             <p className="text-xs text-green-700">
               Our virtual assistant provides property valuations with expert-level accuracy, available 24/7
             </p>
+          </div>
         </div>
       </div>
     </div>
@@ -122,6 +126,3 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
 }
 
 export default ValuationPopup;
-            <span>Why Use Our Virtual Assistant?</span>
-  )
-}
