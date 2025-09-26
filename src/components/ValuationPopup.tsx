@@ -63,12 +63,6 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-green-100 p-1 rounded-full">
-                  <Users className="h-4 w-4 text-green-600" />
-                </div>
-                <span className="text-sm text-gray-700">Expert connection - Seamlessly connects you to our specialists</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="bg-green-100 p-1 rounded-full">
                   <Shield className="h-4 w-4 text-green-600" />
                 </div>
                 <span className="text-sm text-gray-700">Secure & private - Your information is protected and confidential</span>
