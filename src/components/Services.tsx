@@ -217,7 +217,9 @@ function Services({ onBack, onNavigate }: ServicesProps) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Property Valuations */}
-            <div className="bg-gray-50 p-6 rounded-xl text-center">
+            <div className="bg-gray-50 p-6 rounded-xl
+  )
+} text-center">
               <div className="bg-blue-100 p-3 rounded-lg w-fit mx-auto mb-4">
                 <Target className="h-6 w-6 text-blue-600" />
               </div>
