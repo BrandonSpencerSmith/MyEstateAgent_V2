@@ -84,12 +84,12 @@ function Landlord({ onBack }: LandlordProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 mx-auto max-w-4xl">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Maximize Your Rental Income with <span className="text-blue-600">Professional Property Management</span>
+              Stress-Free Property Management with <span className="text-blue-600">Complete Peace of Mind</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               Take the stress out of being a landlord with our comprehensive property management services. 
               From tenant screening to maintenance coordination, we handle everything so you can enjoy 
-              passive rental income with complete peace of mind.
+              the benefits of property ownership without the daily hassles.
             </p>
             <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
               Get Your Free Property Assessment
@@ -556,7 +556,7 @@ function Landlord({ onBack }: LandlordProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Maximize Your Rental Income?</h2>
           <p className="text-lg text-gray-600 mb-8">
-            Get started today with a free property assessment and discover how much your property could earn.
+            Get started today with a free property assessment and discover how we can help you.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
