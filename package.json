@@ -5,13 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "postbuild": "node scripts/prerender-routes.js",
-    "postbuild": "node scripts/verify-prerender.js || echo 'Prerender verification completed'",
+    "build": "vite-ssg build",
     "lint": "eslint .",
     "build:netlify": "npm run build && cp public/_redirects dist/",
-    "build:ssg": "npm run build && npm run prerender",
-    "prerender": "npm run postbuild"
+    "build:ssg": "npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { Prerenderer } from '@prerenderer/cli';
-import { PuppeteerRenderer } from '@prerenderer/renderer-puppeteer';
+import { ViteSSG } from 'vite-plugin-ssg';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    Prerenderer({
+    ViteSSG({
       routes: [
         '/',
         '/about',
@@ -19,10 +18,7 @@ export default defineConfig({
         '/privacy',
         '/terms',
         '/cookies'
-      ],
-      renderer: new PuppeteerRenderer({
-        renderAfterDocumentEvent: 'render-complete'
-      })
+      ]
     })
   ],
   build: {
