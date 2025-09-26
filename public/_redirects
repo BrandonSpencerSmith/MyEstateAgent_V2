@@ -1,0 +1,10 @@
+# Single Page Application routing
+# This ensures all routes are handled by React Router
+/*    /index.html   200
+
+# API routes (if you add serverless functions later)
+/api/*  /.netlify/functions/:splat  200
+
+# Prevent access to sensitive files
+/.env*  /404.html  404
+/.*     /404.html  404
