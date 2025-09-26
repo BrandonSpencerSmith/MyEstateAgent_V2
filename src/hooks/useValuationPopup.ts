@@ -9,7 +9,7 @@ export function useValuationPopup() {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'valuation_popup_opened', {
         event_category: 'engagement',
-        event_label: 'valuation_booking'
+        event_label: 'expert_consultation'
       });
     }
   };
@@ -18,33 +18,32 @@ export function useValuationPopup() {
     setIsPopupOpen(false);
   };
 
-  const handleVirtualAssistant = () => {
+  const handleCallNow = () => {
     // Analytics tracking
     if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'virtual_assistant_selected', {
+      (window as any).gtag('event', 'call_now_selected', {
         event_category: 'conversion',
-        event_label: 'valuation_booking'
+        event_label: 'phone_consultation'
       });
     }
     
-    // Here you would integrate with your virtual assistant
-    console.log('Opening virtual assistant for valuation...');
-    alert('Virtual Assistant feature coming soon! For now, please call us at 01234 567890.');
+    // Initiate phone call
+    window.location.href = 'tel:+441234567890';
     closePopup();
   };
 
-  const handleStandardForm = () => {
+  const handleBookConsultation = () => {
     // Analytics tracking
     if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'standard_form_selected', {
+      (window as any).gtag('event', 'consultation_booking_selected', {
         event_category: 'conversion',
-        event_label: 'valuation_booking'
+        event_label: 'scheduled_consultation'
       });
     }
     
-    // Here you would navigate to the standard form
-    console.log('Opening standard valuation form...');
-    alert('Standard form feature coming soon! For now, please call us at 01234 567890.');
+    // Here you would integrate with your booking system
+    console.log('Opening consultation booking system...');
+    alert('Thank you for your interest! Our team will contact you within 2 hours to schedule your consultation. Call us directly at 01234 567890 for immediate assistance.');
     closePopup();
   };
 
@@ -52,7 +51,7 @@ export function useValuationPopup() {
     isPopupOpen,
     openPopup,
     closePopup,
-    handleVirtualAssistant,
-    handleStandardForm
+    handleCallNow,
+    handleBookConsultation
   };
 }

@@ -8,7 +8,7 @@ interface SellProps {
 }
 
 function Sell({ onBack }: SellProps) {
-  const { isPopupOpen, openPopup, closePopup, handleVirtualAssistant, handleStandardForm } = useValuationPopup();
+  const { isPopupOpen, openPopup, closePopup, handleCallNow, handleBookConsultation } = useValuationPopup();
 
   return (
     <div className="min-h-screen bg-white">
@@ -571,8 +571,8 @@ function Sell({ onBack }: SellProps) {
       <ValuationPopup
         isOpen={isPopupOpen}
         onClose={closePopup}
-        onUseVirtualAssistant={handleVirtualAssistant}
-        onContinueToForm={handleStandardForm}
+        onCallNow={handleCallNow}
+        onBookConsultation={handleBookConsultation}
       />
     </div>
   );

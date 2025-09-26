@@ -404,8 +404,8 @@ function App() {
       <ValuationPopup
         isOpen={isPopupOpen}
         onClose={closePopup}
-        onUseVirtualAssistant={handleVirtualAssistant}
-        onContinueToForm={handleStandardForm}
+        onCallNow={handleCallNow}
+        onBookConsultation={handleBookConsultation}
       />
     </div>
   );
