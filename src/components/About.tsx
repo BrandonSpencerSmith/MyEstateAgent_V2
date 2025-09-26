@@ -295,3 +295,6 @@ function About({ onBack }: AboutProps) {
     </div>
   );
 }
+
+export default About;
+}
