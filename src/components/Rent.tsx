@@ -1,4 +1,6 @@
 import React from 'react';
+import ValuationPopup from './ValuationPopup';
+import { useValuationPopup } from '../hooks/useValuationPopup';
 import { Home, ArrowLeft, Key, Users, Shield, Clock, CheckCircle, Calendar, Heart, Bath, Bed, Car } from 'lucide-react';
 
 interface RentProps {
@@ -6,6 +8,8 @@ interface RentProps {
 }
 
 function Rent({ onBack }: RentProps) {
+  const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -189,7 +193,9 @@ function Rent({ onBack }: RentProps) {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={openPopup}
+                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
                   </button>
@@ -334,7 +340,9 @@ function Rent({ onBack }: RentProps) {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={openPopup}
+                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
                   </button>
@@ -479,7 +487,9 @@ function Rent({ onBack }: RentProps) {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={openPopup}
+                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
                   </button>
@@ -624,7 +634,9 @@ function Rent({ onBack }: RentProps) {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={openPopup}
+                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
                   </button>
@@ -768,7 +780,9 @@ function Rent({ onBack }: RentProps) {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={openPopup}
+                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
                   </button>
@@ -920,6 +934,13 @@ function Rent({ onBack }: RentProps) {
           </div>
         </div>
       </section>
+
+      {/* Valuation Popup */}
+      <ValuationPopup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        onUseVirtualAssistant={handleUseVirtualAssistant}
+      />
     </div>
   );
 }
