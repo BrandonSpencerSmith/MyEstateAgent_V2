@@ -122,3 +122,5 @@ function ValuationPopup({ isOpen, onClose, onUseVirtualAssistant }: ValuationPop
 
 export default ValuationPopup;
             <span>Why Use Our Virtual Assistant?</span>
+  )
+}
