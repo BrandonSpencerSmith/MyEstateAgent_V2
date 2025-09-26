@@ -6,7 +6,7 @@
   publish = "dist"
   
   # Default build command
-  command = "npm run build && npm run postbuild"
+  command = "npm run build"
 
 [build.environment]
   # Node.js version
