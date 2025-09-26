@@ -13,6 +13,16 @@ function Buy({ onBack }: BuyProps) {
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
   const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
 
+  // Dispatch render-complete event when component is fully loaded
+  React.useEffect(() => {
+    // Simulate property listings being loaded
+    const timer = setTimeout(() => {
+      document.dispatchEvent(new Event('render-complete'));
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
