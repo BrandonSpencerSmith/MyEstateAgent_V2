@@ -50,7 +50,7 @@ function Services({ onBack, onNavigate }: ServicesProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Buying */}
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center flex flex-col h-full">
               <div className="bg-blue-100 p-3 rounded-lg w-fit mb-6 mx-auto">
                 <Search className="h-8 w-8 text-blue-600" />
               </div>
@@ -58,7 +58,7 @@ function Services({ onBack, onNavigate }: ServicesProps) {
               <p className="text-gray-600 mb-6 leading-relaxed text-center">
                 Find your dream home with our extensive property database and expert guidance throughout the buying process.
               </p>
-              <ul className="space-y-3 text-gray-600 mb-6">
+              <ul className="space-y-3 text-gray-600 mb-6 flex-grow">
                 <li className="flex items-center space-x-3 justify-center text-center">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                   <span>Comprehensive property search</span>
@@ -80,16 +80,18 @@ function Services({ onBack, onNavigate }: ServicesProps) {
                   <span>Viewing arrangements</span>
                 </li>
               </ul>
-              <button 
+              <div className="mt-auto">
+                <button 
                 onClick={() => onNavigate('buy')}
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium w-full"
-              >
+                >
                 Start Property Search
-              </button>
+                </button>
+              </div>
             </div>
 
             {/* Renting a Property */}
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center flex flex-col h-full">
               <div className="bg-orange-100 p-3 rounded-lg w-fit mb-6 mx-auto">
                 <Home className="h-8 w-8 text-orange-600" />
               </div>
@@ -97,7 +99,7 @@ function Services({ onBack, onNavigate }: ServicesProps) {
               <p className="text-gray-600 mb-6 leading-relaxed text-center">
                 Find your ideal rental home with our extensive portfolio of quality properties and dedicated tenant support services.
               </p>
-              <ul className="space-y-3 text-gray-600 mb-6">
+              <ul className="space-y-3 text-gray-600 mb-6 flex-grow">
                 <li className="flex items-center space-x-3 justify-center text-center">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                   <span>Extensive property portfolio</span>
@@ -119,16 +121,18 @@ function Services({ onBack, onNavigate }: ServicesProps) {
                   <span>Ongoing tenant support</span>
                 </li>
               </ul>
-              <button 
+              <div className="mt-auto">
+                <button 
                 onClick={() => onNavigate('rent')}
                 className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors font-medium w-full"
-              >
+                >
                 Find Rental Properties
-              </button>
+                </button>
+              </div>
             </div>
 
             {/* Selling */}
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center flex flex-col h-full">
               <div className="bg-green-100 p-3 rounded-lg w-fit mb-6 mx-auto">
                 <TrendingUp className="h-8 w-8 text-green-600" />
               </div>
@@ -136,7 +140,7 @@ function Services({ onBack, onNavigate }: ServicesProps) {
               <p className="text-gray-600 mb-6 leading-relaxed text-center">
                 Get the best price for your property with our comprehensive marketing strategy and expert valuation services.
               </p>
-              <ul className="space-y-3 text-gray-600 mb-6">
+              <ul className="space-y-3 text-gray-600 mb-6 flex-grow">
                 <li className="flex items-center space-x-3 justify-center text-center">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                   <span>Free property valuations</span>
@@ -158,13 +162,15 @@ function Services({ onBack, onNavigate }: ServicesProps) {
                   <span>Sale progression management</span>
                 </li>
               </ul>
-              <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium w-full">
+              <div className="mt-auto">
+                <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium w-full">
                 Get Free Valuation
-              </button>
+                </button>
+              </div>
             </div>
 
             {/* Lettings & Management */}
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center flex flex-col h-full">
               <div className="bg-purple-100 p-3 rounded-lg w-fit mb-6 mx-auto">
                 <Key className="h-8 w-8 text-purple-600" />
               </div>
@@ -172,7 +178,7 @@ function Services({ onBack, onNavigate }: ServicesProps) {
               <p className="text-gray-600 mb-6 leading-relaxed text-center">
                 Professional lettings and property management services for landlords seeking reliable rental income.
               </p>
-              <ul className="space-y-3 text-gray-600 mb-6">
+              <ul className="space-y-3 text-gray-600 mb-6 flex-grow">
                 <li className="flex items-center space-x-3 justify-center text-center">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                   <span>Tenant finding and vetting</span>
@@ -194,12 +200,14 @@ function Services({ onBack, onNavigate }: ServicesProps) {
                   <span>Maintenance coordination</span>
                 </li>
               </ul>
-              <button 
+              <div className="mt-auto">
+                <button 
                 onClick={() => onNavigate('landlord')}
                 className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium w-full"
-              >
+                >
                 Landlord Services
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>
