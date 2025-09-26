@@ -8,9 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:netlify": "npm run build && cp public/_redirects dist/",
-    "build:ssg": "npm run build && npm run prerender",
-    "prerender": "node scripts/prerender.js"
+    "build:netlify": "npm run build && cp public/_redirects dist/"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
