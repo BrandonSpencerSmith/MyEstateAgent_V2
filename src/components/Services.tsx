@@ -420,12 +420,14 @@ function Services({ onBack, onNavigate }: ServicesProps) {
           </div>
           
           <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
-          <button 
-            onClick={openConsultation}
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
-          >
+          Book Your Free Consultation
+        </button>
+        <button 
+          onClick={openConsultation}
+          className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
+        >
             Book Your Free Consultation
-          </button>
+        </button>
         </div>
       </section>
 
