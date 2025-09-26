@@ -1,27 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { PrerenderSPAPlugin } from 'vite-plugin-prerender-spa';
+import { PrerenderSPAPlugin } from 'vite-plugin-prerender';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: false,
-    minify: true,
-    rollupOptions: {
-      input: {
-        main: './index.html'
-      },
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          icons: ['lucide-react']
-        }
-      }
-    }
-  },
   plugins: [
     react(),
     PrerenderSPAPlugin({
@@ -46,6 +28,23 @@ export default defineConfig({
       }
     })
   ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    minify: true,
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      },
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          icons: ['lucide-react']
+        }
+      }
+    }
+  },
   optimizeDeps: {
   },
 });
