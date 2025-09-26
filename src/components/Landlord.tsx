@@ -588,12 +588,9 @@ function Landlord({ onBack }: LandlordProps) {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex justify-center mb-8">
             <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
               Get Free Property Assessment
-            </button>
-            <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg">
-              Download Landlord Guide
             </button>
           </div>
 
