@@ -192,15 +192,12 @@ function Buy({ onBack }: BuyProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex justify-center">
                   <button 
                     onClick={openPopup}
-                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
-                  </button>
-                  <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
-                    Request Details
                   </button>
                 </div>
               </div>
@@ -337,15 +334,12 @@ function Buy({ onBack }: BuyProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex justify-center">
                   <button 
                     onClick={openPopup}
-                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
-                  </button>
-                  <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
-                    Request Details
                   </button>
                 </div>
               </div>
@@ -482,15 +476,12 @@ function Buy({ onBack }: BuyProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex justify-center">
                   <button 
                     onClick={openPopup}
-                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
-                  </button>
-                  <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
-                    Request Details
                   </button>
                 </div>
               </div>
@@ -628,15 +619,12 @@ function Buy({ onBack }: BuyProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex justify-center">
                   <button 
                     onClick={openPopup}
-                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
-                  </button>
-                  <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
-                    Request Details
                   </button>
                 </div>
               </div>
@@ -774,15 +762,12 @@ function Buy({ onBack }: BuyProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex justify-center">
                   <button 
                     onClick={openPopup}
-                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
                     <Calendar className="h-5 w-5" />
                     <span>Book Viewing</span>
-                  </button>
-                  <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
-                    Request Details
                   </button>
                 </div>
               </div>
