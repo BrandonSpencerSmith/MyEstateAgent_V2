@@ -1,6 +1,8 @@
 import React from 'react';
 import ValuationPopup from './ValuationPopup';
+import ConsultationPopup from './ConsultationPopup';
 import { useValuationPopup } from '../hooks/useValuationPopup';
+import { useConsultationPopup } from '../hooks/useConsultationPopup';
 import { Home, ArrowLeft, TrendingUp, Camera, Users, Award, Clock, CheckCircle, Calendar, Star, Phone, Mail, MapPin, Target, Shield, Zap } from 'lucide-react';
 
 interface SellProps {
@@ -9,6 +11,7 @@ interface SellProps {
 
 function Sell({ onBack }: SellProps) {
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
+  const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
 
   return (
     <div className="min-h-screen bg-white">
@@ -52,7 +55,10 @@ function Sell({ onBack }: SellProps) {
               >
                 Get Free Property Valuation
               </button>
-              <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg">
+              <button 
+                onClick={openConsultation}
+                className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium text-lg"
+              >
                 Book Consultation
               </button>
             </div>
@@ -572,6 +578,12 @@ function Sell({ onBack }: SellProps) {
         isOpen={isPopupOpen}
         onClose={closePopup}
         onUseVirtualAssistant={handleUseVirtualAssistant}
+      />
+
+      {/* Consultation Popup */}
+      <ConsultationPopup
+        isOpen={isConsultationOpen}
+        onClose={closeConsultation}
       />
     </div>
   );

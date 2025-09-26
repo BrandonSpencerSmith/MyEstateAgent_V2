@@ -1,6 +1,8 @@
 import React from 'react';
 import ValuationPopup from './components/ValuationPopup';
+import ConsultationPopup from './components/ConsultationPopup';
 import { useValuationPopup } from './hooks/useValuationPopup';
+import { useConsultationPopup } from './hooks/useConsultationPopup';
 import About from './components/About';
 import Buy from './components/Buy';
 import Rent from './components/Rent';
@@ -15,6 +17,7 @@ import { Home, Key, Users, Phone, Mail, MapPin, Search, Heart, TrendingUp } from
 function App() {
   const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'sell' | 'rent' | 'landlord' | 'services' | 'privacy' | 'terms' | 'cookies'>('home');
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
+  const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
 
   // Scroll to top when navigating to a new page
   React.useEffect(() => {
@@ -405,6 +408,12 @@ function App() {
         isOpen={isPopupOpen}
         onClose={closePopup}
         onUseVirtualAssistant={handleUseVirtualAssistant}
+      />
+
+      {/* Consultation Popup */}
+      <ConsultationPopup
+        isOpen={isConsultationOpen}
+        onClose={closeConsultation}
       />
     </div>
   );
