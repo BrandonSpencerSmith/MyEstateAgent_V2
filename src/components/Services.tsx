@@ -46,10 +46,9 @@ function Services({ onBack, onNavigate }: ServicesProps) {
         </div>
       </section>
 
-      {/* Main Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Buying */}
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
               <div className="bg-blue-100 p-3 rounded-lg w-fit mb-6 mx-auto">
@@ -89,6 +88,45 @@ function Services({ onBack, onNavigate }: ServicesProps) {
               </button>
             </div>
 
+            {/* Renting a Property */}
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+              <div className="bg-orange-100 p-3 rounded-lg w-fit mb-6 mx-auto">
+                <Home className="h-8 w-8 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Renting a Property</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed text-center">
+                Find your ideal rental home with our extensive portfolio of quality properties and dedicated tenant support services.
+              </p>
+              <ul className="space-y-3 text-gray-600 mb-6">
+                <li className="flex items-center space-x-3 justify-center text-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Extensive property portfolio</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center text-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Viewing coordination</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center text-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Application processing</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center text-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Tenancy agreement support</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center text-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Ongoing tenant support</span>
+                </li>
+              </ul>
+              <button 
+                onClick={() => onNavigate('rent')}
+                className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors font-medium w-full"
+              >
+                Find Rental Properties
+              </button>
+            </div>
+
             {/* Selling */}
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
               <div className="bg-green-100 p-3 rounded-lg w-fit mb-6 mx-auto">
@@ -125,14 +163,14 @@ function Services({ onBack, onNavigate }: ServicesProps) {
               </button>
             </div>
 
-            {/* Renting */}
+            {/* Lettings & Management */}
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
               <div className="bg-purple-100 p-3 rounded-lg w-fit mb-6 mx-auto">
                 <Key className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Lettings & Management</h3>
               <p className="text-gray-600 mb-6 leading-relaxed text-center">
-                Whether you're a tenant or landlord, we provide complete letting services with full property management options.
+                Professional lettings and property management services for landlords seeking reliable rental income.
               </p>
               <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-center space-x-3 justify-center text-center">
@@ -141,7 +179,7 @@ function Services({ onBack, onNavigate }: ServicesProps) {
                 </li>
                 <li className="flex items-center space-x-3 justify-center text-center">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                  <span>Property management services</span>
+                  <span>Full property management</span>
                 </li>
                 <li className="flex items-center space-x-3 justify-center text-center">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
@@ -156,8 +194,11 @@ function Services({ onBack, onNavigate }: ServicesProps) {
                   <span>Maintenance coordination</span>
                 </li>
               </ul>
-              <button className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium w-full">
-                Explore Rentals
+              <button 
+                onClick={() => onNavigate('landlord')}
+                className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium w-full"
+              >
+                Landlord Services
               </button>
             </div>
           </div>
