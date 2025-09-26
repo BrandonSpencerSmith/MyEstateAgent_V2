@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite-ssg build",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postbuild": "prerender --routes / /about /buy /sell /rent /landlord /services /privacy /terms /cookies --renderer @prerenderer/renderer-puppeteer --renderer-options '{\"headless\": true}' --output dist",
     "lint": "eslint .",
     "build:netlify": "npm run build && cp public/_redirects dist/",
-    "build:ssg": "npm run build"
+    "build:ssg": "npm run build && npm run prerender",
+    "prerender": "node scripts/prerender.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

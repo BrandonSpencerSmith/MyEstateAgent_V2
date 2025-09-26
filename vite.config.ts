@@ -1,26 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { ViteSSG } from 'vite-plugin-ssg';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    ViteSSG({
-      routes: [
-        '/',
-        '/about',
-        '/buy',
-        '/rent',
-        '/sell',
-        '/services',
-        '/landlord',
-        '/privacy',
-        '/terms',
-        '/cookies'
-      ]
-    })
-  ],
+  plugins: [react()],
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
