@@ -1,6 +1,4 @@
 import React from 'react';
-import ConsultationPopup from './ConsultationPopup';
-import { useConsultationPopup } from '../hooks/useConsultationPopup';
 import { Home, Users, Award, Clock, MapPin, TrendingUp, Heart, Shield, CheckCircle, ArrowLeft } from 'lucide-react';
 
 interface AboutProps {
@@ -8,7 +6,6 @@ interface AboutProps {
 }
 
 function About({ onBack }: AboutProps) {
-  const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
