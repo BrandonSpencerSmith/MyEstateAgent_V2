@@ -280,9 +280,8 @@ function About({ onBack }: AboutProps) {
             Whether you're buying, selling, or renting, we're here to guide you through every step of your property journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
             <button 
-              onClick={openConsultation}
+              onClick={onBack}
               className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
               Book Free Consultation
@@ -296,16 +295,6 @@ function About({ onBack }: AboutProps) {
           </div>
         </div>
       </section>
-
-      {/* Consultation Popup */}
-      <ConsultationPopup
-        isOpen={isConsultationOpen}
-        onClose={closeConsultation}
-      />
     </div>
   );
-}
-
-export default About;
-  )
 }
