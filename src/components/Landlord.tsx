@@ -152,8 +152,6 @@ function Landlord({ onBack }: LandlordProps) {
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Essential</h3>
-                <div className="text-4xl font-bold text-blue-600 mb-2">12%</div>
-                <p className="text-gray-600">of monthly rental income</p>
               </div>
               
               <ul className="space-y-4 mb-8">
@@ -202,8 +200,6 @@ function Landlord({ onBack }: LandlordProps) {
               
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
-                <div className="text-4xl font-bold text-blue-600 mb-2">10%</div>
-                <p className="text-gray-600">of monthly rental income</p>
               </div>
               
               <ul className="space-y-4 mb-8">
@@ -246,8 +242,6 @@ function Landlord({ onBack }: LandlordProps) {
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Premium</h3>
-                <div className="text-4xl font-bold text-blue-600 mb-2">8%</div>
-                <p className="text-gray-600">of monthly rental income</p>
               </div>
               
               <ul className="space-y-4 mb-8">
