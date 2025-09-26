@@ -185,9 +185,6 @@ function Landlord({ onBack }: LandlordProps) {
                 </li>
               </ul>
               
-              <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                Choose Essential
-              </button>
             </div>
 
             {/* Professional Package */}
@@ -233,9 +230,6 @@ function Landlord({ onBack }: LandlordProps) {
                 </li>
               </ul>
               
-              <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                Choose Professional
-              </button>
             </div>
 
             {/* Premium Package */}
@@ -275,9 +269,6 @@ function Landlord({ onBack }: LandlordProps) {
                 </li>
               </ul>
               
-              <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                Choose Premium
-              </button>
             </div>
           </div>
         </div>
