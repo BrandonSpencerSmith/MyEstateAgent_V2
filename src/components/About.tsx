@@ -1,4 +1,6 @@
 import React from 'react';
+import ConsultationPopup from './ConsultationPopup';
+import { useConsultationPopup } from '../hooks/useConsultationPopup';
 import { Home, Users, Award, Clock, MapPin, TrendingUp, Heart, Shield, CheckCircle, ArrowLeft } from 'lucide-react';
 
 interface AboutProps {
@@ -6,6 +8,7 @@ interface AboutProps {
 }
 
 function About({ onBack }: AboutProps) {
+  const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -278,6 +281,10 @@ function About({ onBack }: AboutProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+            <button 
+              onClick={openConsultation}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            >
               Book Free Consultation
             </button>
             <button 
@@ -289,8 +296,16 @@ function About({ onBack }: AboutProps) {
           </div>
         </div>
       </section>
+
+      {/* Consultation Popup */}
+      <ConsultationPopup
+        isOpen={isConsultationOpen}
+        onClose={closeConsultation}
+      />
     </div>
   );
 }
 
 export default About;
+  )
+}
