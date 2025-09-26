@@ -4,13 +4,14 @@ import Buy from './components/Buy';
 import Rent from './components/Rent';
 import Sell from './components/Sell';
 import Services from './components/Services';
+import Landlord from './components/Landlord';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
 import { Home, Key, Users, Phone, Mail, MapPin, Search, Heart, TrendingUp } from 'lucide-react';
 
 function App() {
-  const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'sell' | 'rent' | 'services' | 'privacy' | 'terms' | 'cookies'>('home');
+  const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'sell' | 'rent' | 'landlord' | 'services' | 'privacy' | 'terms' | 'cookies'>('home');
 
   // Scroll to top when navigating to a new page
   React.useEffect(() => {
@@ -31,6 +32,10 @@ function App() {
 
   if (currentPage === 'rent') {
     return <Rent onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'landlord') {
+    return <Landlord onBack={() => setCurrentPage('home')} />;
   }
 
   if (currentPage === 'services') {
