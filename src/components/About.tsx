@@ -297,4 +297,3 @@ function About({ onBack }: AboutProps) {
 }
 
 export default About;
-}
