@@ -9,7 +9,7 @@ export function useValuationPopup() {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'valuation_popup_opened', {
         event_category: 'engagement',
-        event_label: 'expert_consultation'
+        event_label: 'virtual_assistant_promotion'
       });
     }
   };
@@ -18,32 +18,18 @@ export function useValuationPopup() {
     setIsPopupOpen(false);
   };
 
-  const handleCallNow = () => {
+  const handleUseVirtualAssistant = () => {
     // Analytics tracking
     if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'call_now_selected', {
+      (window as any).gtag('event', 'virtual_assistant_selected', {
         event_category: 'conversion',
-        event_label: 'phone_consultation'
+        event_label: 'ai_valuation_started'
       });
     }
     
-    // Initiate phone call
-    window.location.href = 'tel:+441234567890';
-    closePopup();
-  };
-
-  const handleBookConsultation = () => {
-    // Analytics tracking
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'consultation_booking_selected', {
-        event_category: 'conversion',
-        event_label: 'scheduled_consultation'
-      });
-    }
-    
-    // Here you would integrate with your booking system
-    console.log('Opening consultation booking system...');
-    alert('Thank you for your interest! Our team will contact you within 2 hours to schedule your consultation. Call us directly at 01234 567890 for immediate assistance.');
+    // Here you would integrate with your virtual assistant/chatbot
+    console.log('Starting virtual assistant valuation...');
+    alert('🤖 Virtual Assistant Starting!\n\nOur AI-powered valuation assistant will now help you get an instant property valuation. You\'ll be able to ask questions and get detailed market insights in real-time!');
     closePopup();
   };
 
@@ -51,7 +37,6 @@ export function useValuationPopup() {
     isPopupOpen,
     openPopup,
     closePopup,
-    handleCallNow,
-    handleBookConsultation
+    handleUseVirtualAssistant
   };
 }

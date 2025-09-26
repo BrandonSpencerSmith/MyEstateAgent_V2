@@ -9,7 +9,7 @@ interface ServicesProps {
 }
 
 function Services({ onBack, onNavigate }: ServicesProps) {
-  const { isPopupOpen, openPopup, closePopup, handleCallNow, handleBookConsultation } = useValuationPopup();
+  const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
 
   return (
     <div className="min-h-screen bg-white">
@@ -426,8 +426,7 @@ function Services({ onBack, onNavigate }: ServicesProps) {
       <ValuationPopup
         isOpen={isPopupOpen}
         onClose={closePopup}
-        onCallNow={handleCallNow}
-        onBookConsultation={handleBookConsultation}
+        onUseVirtualAssistant={handleUseVirtualAssistant}
       />
     </div>
   );

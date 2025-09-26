@@ -9,7 +9,7 @@ interface LandlordProps {
 
 function Landlord({ onBack }: LandlordProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const { isPopupOpen, openPopup, closePopup, handleCallNow, handleBookConsultation } = useValuationPopup();
+  const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -616,8 +616,7 @@ function Landlord({ onBack }: LandlordProps) {
       <ValuationPopup
         isOpen={isPopupOpen}
         onClose={closePopup}
-        onCallNow={handleCallNow}
-        onBookConsultation={handleBookConsultation}
+        onUseVirtualAssistant={handleUseVirtualAssistant}
       />
     </div>
   );

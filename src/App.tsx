@@ -14,7 +14,7 @@ import { Home, Key, Users, Phone, Mail, MapPin, Search, Heart, TrendingUp } from
 
 function App() {
   const [currentPage, setCurrentPage] = React.useState<'home' | 'about' | 'buy' | 'sell' | 'rent' | 'landlord' | 'services' | 'privacy' | 'terms' | 'cookies'>('home');
-  const { isPopupOpen, openPopup, closePopup, handleCallNow, handleBookConsultation } = useValuationPopup();
+  const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
 
   // Scroll to top when navigating to a new page
   React.useEffect(() => {
@@ -404,8 +404,7 @@ function App() {
       <ValuationPopup
         isOpen={isPopupOpen}
         onClose={closePopup}
-        onCallNow={handleCallNow}
-        onBookConsultation={handleBookConsultation}
+        onUseVirtualAssistant={handleUseVirtualAssistant}
       />
     </div>
   );
