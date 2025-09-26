@@ -1,8 +1,6 @@
 import React from 'react';
 import ValuationPopup from './ValuationPopup';
-import ConsultationPopup from './ConsultationPopup';
 import { useValuationPopup } from '../hooks/useValuationPopup';
-import { useConsultationPopup } from '../hooks/useConsultationPopup';
 import { Home, ArrowLeft, Search, TrendingUp, Key, Users, Award, Clock, CheckCircle, Calendar, Star, Phone, Mail, MapPin, Target, Shield, Zap, Camera, Heart } from 'lucide-react';
 
 interface ServicesProps {
@@ -12,7 +10,6 @@ interface ServicesProps {
 
 function Services({ onBack, onNavigate }: ServicesProps) {
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
-  const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
 
   return (
     <div className="min-h-screen bg-white">
@@ -420,10 +417,6 @@ function Services({ onBack, onNavigate }: ServicesProps) {
           </div>
           
           <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">
-          <button 
-            onClick={openConsultation}
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
-          >
             Book Your Free Consultation
           </button>
         </div>
@@ -435,16 +428,8 @@ function Services({ onBack, onNavigate }: ServicesProps) {
         onClose={closePopup}
         onUseVirtualAssistant={handleUseVirtualAssistant}
       />
-
-      {/* Consultation Popup */}
-      <ConsultationPopup
-        isOpen={isConsultationOpen}
-        onClose={closeConsultation}
-      />
     </div>
   );
 }
 
 export default Services;
-  )
-}

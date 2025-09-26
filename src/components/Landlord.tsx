@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import ValuationPopup from './ValuationPopup';
-import ConsultationPopup from './ConsultationPopup';
 import { useValuationPopup } from '../hooks/useValuationPopup';
-import { useConsultationPopup } from '../hooks/useConsultationPopup';
 import { Home, ArrowLeft, Key, Users, Shield, Clock, CheckCircle, Calendar, Star, Phone, Mail, MapPin, Target, Award, TrendingUp, FileText, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface LandlordProps {
@@ -12,7 +10,6 @@ interface LandlordProps {
 function Landlord({ onBack }: LandlordProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
-  const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -584,7 +581,7 @@ function Landlord({ onBack }: LandlordProps) {
           
           <div className="flex justify-center mb-8">
             <button 
-              onClick={openConsultation}
+              onClick={openPopup}
               className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
             >
               Get Free Property Assessment
@@ -620,12 +617,6 @@ function Landlord({ onBack }: LandlordProps) {
         isOpen={isPopupOpen}
         onClose={closePopup}
         onUseVirtualAssistant={handleUseVirtualAssistant}
-      />
-
-      {/* Consultation Popup */}
-      <ConsultationPopup
-        isOpen={isConsultationOpen}
-        onClose={closeConsultation}
       />
     </div>
   );
