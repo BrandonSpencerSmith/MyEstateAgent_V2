@@ -129,7 +129,7 @@ function App() {
               Find Your Perfect <span className="text-blue-600">Home</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Discover exceptional properties across the UK with MyEstateAgent. From charming cottages to luxury estates, 
+              Discover exceptional properties across Leicestershire with MyEstateAgent. From charming cottages to luxury estates, 
               we help you find the home of your dreams with expert guidance every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
