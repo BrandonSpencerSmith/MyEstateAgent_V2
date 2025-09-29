@@ -45,7 +45,7 @@ function Rent({ onBack }: RentProps) {
               Find Your Perfect <span className="text-blue-600">Rental</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed text-center">
-              Discover exceptional rental properties across the UK with MyEstateAgent. From modern apartments 
+              Discover exceptional rental properties across Leicestershire with MyEstateAgent. From modern apartments 
               to family homes, we help you find the perfect rental property with expert guidance and support.
             </p>
           </div>
