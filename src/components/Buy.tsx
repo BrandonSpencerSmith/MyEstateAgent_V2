@@ -45,7 +45,7 @@ function Buy({ onBack }: BuyProps) {
               Find Your Perfect <span className="text-blue-600">Home</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed text-center">
-              Discover your dream property from our extensive collection of homes across the UK. 
+              Discover your dream property from our extensive collection of homes across Leicestershire. 
               From cozy apartments to luxury estates, we have something for everyone.
             </p>
           </div>

@@ -46,7 +46,7 @@ function Sell({ onBack }: SellProps) {
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               Get the best price for your property with our expert marketing, professional photography, and proven sales strategy. 
-              Our experienced team will guide you through every step of the selling process.
+              Our experienced team will guide you through every step of the selling process in Leicestershire.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
