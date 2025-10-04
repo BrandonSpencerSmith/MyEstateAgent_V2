@@ -1,6 +1,6 @@
 export const buyProperties = [
   {
-    image: '/files_4699348-1758720071500-image.png',
+    image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Semi-detached house on School Lane, Stoney Stanton',
     price: '£250,000',
     address: 'School Lane, Stoney Stanton',
@@ -21,7 +21,7 @@ export const buyProperties = [
     ]
   },
   {
-    image: '/image.png',
+    image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Detached house on Bumblebee Lane, Desford',
     price: '£470,000',
     address: 'Bumblebee Lane, Desford',
@@ -42,7 +42,7 @@ export const buyProperties = [
     ]
   },
   {
-    image: '/image copy.png',
+    image: 'https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Terraced house on Ridge Road, Thurlaston',
     price: '£175,000',
     address: 'Ridge Road, Thurlaston',
@@ -63,7 +63,7 @@ export const buyProperties = [
     ]
   },
   {
-    image: '/image copy copy.png',
+    image: 'https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Detached house on Lilac Drive, Gilmorton',
     price: '£395,000',
     address: 'Lilac Drive, Gilmorton',
@@ -84,7 +84,7 @@ export const buyProperties = [
     ]
   },
   {
-    image: '/image copy copy copy.png',
+    image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Modern flat on Pebble Rise, Elmesthorpe',
     price: '£145,000',
     address: 'Pebble Rise, Elmesthorpe',
@@ -108,7 +108,7 @@ export const buyProperties = [
 
 export const rentProperties = [
   {
-    image: '/detatched istockphoto-453534627-612x612.jpg',
+    image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Detached house on Macey Gardens, Anstey',
     price: '£1,950 pcm',
     address: 'Macey Gardens, Anstey',
@@ -130,7 +130,7 @@ export const rentProperties = [
     status: 'For Rent'
   },
   {
-    image: '/semi istockphoto-96268939-612x612.jpg',
+    image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Semi-detached house on Fallow Close, Willoughby Waterleys',
     price: '£1,400 pcm',
     address: 'Fallow Close, Willoughby Waterleys',
@@ -152,7 +152,7 @@ export const rentProperties = [
     status: 'For Rent'
   },
   {
-    image: '/semi 2 istockphoto-511475808-612x612.jpg',
+    image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Semi-detached house on Back Street, Braunstone Town',
     price: '£1,250 pcm',
     address: 'Back Street, Braunstone Town',
@@ -174,7 +174,7 @@ export const rentProperties = [
     status: 'For Rent'
   },
   {
-    image: '/detached_2_istockphoto-2191490771-612x612.jpg',
+    image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Detached house on Lutterworth Road, Cosby',
     price: '£2,000 pcm',
     address: 'Lutterworth Road, Cosby',
@@ -196,7 +196,7 @@ export const rentProperties = [
     status: 'For Rent'
   },
   {
-    image: '/flat_istockphoto-1421422160-612x612.jpg',
+    image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Modern flat on Robin Road, Broughton Astley',
     price: '£800 pcm',
     address: 'Robin Road, Broughton Astley',
