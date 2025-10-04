@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ValuationPopup from './ValuationPopup';
 import { useValuationPopup } from '../hooks/useValuationPopup';
 import ConsultationPopup from './ConsultationPopup';
@@ -7,6 +7,7 @@ import PageHeader from './shared/PageHeader';
 import PropertyCard from './shared/PropertyCard';
 import { rentProperties } from '../data/properties';
 import { Key, Shield, Users, CheckCircle } from 'lucide-react';
+import { verifyDataLoaded, verifyComponentMount, verifyImports } from '../utils/devDiagnostics';
 
 interface RentProps {
   onBack: () => void;
@@ -15,6 +16,12 @@ interface RentProps {
 export default function Rent({ onBack }: RentProps) {
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
   const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
+
+  useEffect(() => {
+    verifyComponentMount('Rent');
+    verifyImports('Rent', { PageHeader, PropertyCard, rentProperties });
+    verifyDataLoaded('Rent Properties', rentProperties);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">

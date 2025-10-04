@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ValuationPopup from './ValuationPopup';
 import { useValuationPopup } from '../hooks/useValuationPopup';
 import ConsultationPopup from './ConsultationPopup';
@@ -7,6 +7,7 @@ import PageHeader from './shared/PageHeader';
 import PropertyCard from './shared/PropertyCard';
 import { buyProperties } from '../data/properties';
 import { Search, Heart, Calendar } from 'lucide-react';
+import { verifyDataLoaded, verifyComponentMount, verifyImports } from '../utils/devDiagnostics';
 
 interface BuyProps {
   onBack: () => void;
@@ -15,6 +16,12 @@ interface BuyProps {
 export default function Buy({ onBack }: BuyProps) {
   const { isPopupOpen, openPopup, closePopup, handleUseVirtualAssistant } = useValuationPopup();
   const { isPopupOpen: isConsultationOpen, openPopup: openConsultation, closePopup: closeConsultation } = useConsultationPopup();
+
+  useEffect(() => {
+    verifyComponentMount('Buy');
+    verifyImports('Buy', { PageHeader, PropertyCard, buyProperties });
+    verifyDataLoaded('Buy Properties', buyProperties);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
