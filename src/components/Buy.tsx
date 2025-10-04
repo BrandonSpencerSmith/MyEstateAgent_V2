@@ -59,19 +59,27 @@ export default function Buy({ onBack }: BuyProps) {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: Search, color: 'blue', title: 'Expert Search', desc: 'Access to exclusive properties and expert market knowledge to find your perfect home.' },
-              { icon: Heart, color: 'green', title: 'Personal Service', desc: 'Dedicated property consultant to understand your needs and guide you through the entire process.' },
-              { icon: Calendar, color: 'purple', title: 'Full Support', desc: 'From viewings to completion, we coordinate with solicitors, surveyors, and mortgage advisors.' }
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-xl shadow-sm text-center">
-                <div className={`bg-${item.color}-100 p-3 rounded-lg w-fit mx-auto mb-6`}>
-                  <item.icon className={`h-8 w-8 text-${item.color}-600`} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+              <div className="bg-blue-100 p-3 rounded-lg w-fit mx-auto mb-6">
+                <Search className="h-8 w-8 text-blue-600" />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Expert Search</h3>
+              <p className="text-gray-600">Access to exclusive properties and expert market knowledge to find your perfect home.</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+              <div className="bg-green-100 p-3 rounded-lg w-fit mx-auto mb-6">
+                <Heart className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Personal Service</h3>
+              <p className="text-gray-600">Dedicated property consultant to understand your needs and guide you through the entire process.</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+              <div className="bg-purple-100 p-3 rounded-lg w-fit mx-auto mb-6">
+                <Calendar className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Full Support</h3>
+              <p className="text-gray-600">From viewings to completion, we coordinate with solicitors, surveyors, and mortgage advisors.</p>
+            </div>
           </div>
         </div>
       </section>

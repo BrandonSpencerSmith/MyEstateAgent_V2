@@ -59,19 +59,27 @@ export default function Rent({ onBack }: RentProps) {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: Key, color: 'blue', title: 'Quality Properties', desc: 'Access to carefully vetted rental properties that meet our high standards for quality and condition.' },
-              { icon: Shield, color: 'green', title: 'Secure Process', desc: 'Professional handling of deposits, contracts, and legal requirements to protect your interests.' },
-              { icon: Users, color: 'purple', title: 'Ongoing Support', desc: 'Dedicated support throughout your tenancy with maintenance coordination and landlord liaison.' }
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-xl shadow-sm text-center">
-                <div className={`bg-${item.color}-100 p-3 rounded-lg w-fit mx-auto mb-6`}>
-                  <item.icon className={`h-8 w-8 text-${item.color}-600`} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+              <div className="bg-blue-100 p-3 rounded-lg w-fit mx-auto mb-6">
+                <Key className="h-8 w-8 text-blue-600" />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Quality Properties</h3>
+              <p className="text-gray-600">Access to carefully vetted rental properties that meet our high standards for quality and condition.</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+              <div className="bg-green-100 p-3 rounded-lg w-fit mx-auto mb-6">
+                <Shield className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Secure Process</h3>
+              <p className="text-gray-600">Professional handling of deposits, contracts, and legal requirements to protect your interests.</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+              <div className="bg-purple-100 p-3 rounded-lg w-fit mx-auto mb-6">
+                <Users className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Ongoing Support</h3>
+              <p className="text-gray-600">Dedicated support throughout your tenancy with maintenance coordination and landlord liaison.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -86,25 +94,62 @@ export default function Rent({ onBack }: RentProps) {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {[
-              { title: 'For Tenants', icon: Users, color: 'blue', items: ['Property search and matching', 'Viewing arrangements', 'Application processing', 'Tenancy agreement support', 'Deposit protection guidance'] },
-              { title: 'For Landlords', icon: Key, color: 'green', items: ['Property marketing and advertising', 'Tenant screening and referencing', 'Rent collection and management', 'Property maintenance coordination', 'Legal compliance support'] }
-            ].map((section, i) => (
-              <div key={i} className="bg-gray-50 p-8 rounded-xl text-center">
-                <div className={`bg-${section.color}-100 p-3 rounded-lg w-fit mb-6 mx-auto`}>
-                  <section.icon className={`h-8 w-8 text-${section.color}-600`} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{section.title}</h3>
-                <ul className="space-y-3 text-gray-600">
-                  {section.items.map((item, j) => (
-                    <li key={j} className="flex items-center space-x-3 justify-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="bg-gray-50 p-8 rounded-xl text-center">
+              <div className="bg-blue-100 p-3 rounded-lg w-fit mb-6 mx-auto">
+                <Users className="h-8 w-8 text-blue-600" />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">For Tenants</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Property search and matching</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Viewing arrangements</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Application processing</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Tenancy agreement support</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Deposit protection guidance</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-gray-50 p-8 rounded-xl text-center">
+              <div className="bg-green-100 p-3 rounded-lg w-fit mb-6 mx-auto">
+                <Key className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">For Landlords</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Property marketing and advertising</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Tenant screening and referencing</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Rent collection and management</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Property maintenance coordination</span>
+                </li>
+                <li className="flex items-center space-x-3 justify-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <span>Legal compliance support</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

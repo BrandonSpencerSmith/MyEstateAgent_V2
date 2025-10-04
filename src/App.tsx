@@ -97,23 +97,39 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { icon: TrendingUp, color: 'green', label: 'Properties Sold', value: '2,500+' },
-              { icon: Users, color: 'blue', label: 'Happy Clients', value: '5,000+' },
-              { icon: Heart, color: 'purple', label: 'Years Experience', value: '15+' }
-            ].map((stat, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
-                <div className="flex items-center justify-center space-x-3">
-                  <div className={`bg-${stat.color}-100 p-2 rounded-lg`}>
-                    <stat.icon className={`h-6 w-6 text-${stat.color}-600`} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">{stat.label}</p>
-                    <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                  </div>
+            <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
+              <div className="flex items-center justify-center space-x-3">
+                <div className="bg-green-100 p-2 rounded-lg">
+                  <TrendingUp className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Properties Sold</p>
+                  <p className="text-2xl font-bold text-gray-900">2,500+</p>
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
+              <div className="flex items-center justify-center space-x-3">
+                <div className="bg-blue-100 p-2 rounded-lg">
+                  <Users className="h-6 w-6 text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Happy Clients</p>
+                  <p className="text-2xl font-bold text-gray-900">5,000+</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
+              <div className="flex items-center justify-center space-x-3">
+                <div className="bg-purple-100 p-2 rounded-lg">
+                  <Heart className="h-6 w-6 text-purple-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Years Experience</p>
+                  <p className="text-2xl font-bold text-gray-900">15+</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
