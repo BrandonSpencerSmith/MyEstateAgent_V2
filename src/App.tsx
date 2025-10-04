@@ -24,19 +24,41 @@ function App() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  const pages = {
-    about: <About onBack={() => setCurrentPage('home')} />,
-    buy: <Buy onBack={() => setCurrentPage('home')} />,
-    sell: <Sell onBack={() => setCurrentPage('home')} />,
-    rent: <Rent onBack={() => setCurrentPage('home')} />,
-    landlord: <Landlord onBack={() => setCurrentPage('home')} />,
-    services: <Services onBack={() => setCurrentPage('home')} onNavigate={setCurrentPage} />,
-    privacy: <PrivacyPolicy onBack={() => setCurrentPage('home')} />,
-    terms: <TermsOfService onBack={() => setCurrentPage('home')} />,
-    cookies: <CookiePolicy onBack={() => setCurrentPage('home')} />
-  };
+  if (currentPage === 'about') {
+    return <About onBack={() => setCurrentPage('home')} />;
+  }
 
-  if (currentPage !== 'home') return pages[currentPage];
+  if (currentPage === 'buy') {
+    return <Buy onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'sell') {
+    return <Sell onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'rent') {
+    return <Rent onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'landlord') {
+    return <Landlord onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'services') {
+    return <Services onBack={() => setCurrentPage('home')} onNavigate={setCurrentPage} />;
+  }
+
+  if (currentPage === 'privacy') {
+    return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'terms') {
+    return <TermsOfService onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'cookies') {
+    return <CookiePolicy onBack={() => setCurrentPage('home')} />;
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -50,12 +72,42 @@ function App() {
             </div>
             
             <nav className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mt-3 sm:mt-0 w-full sm:w-auto">
-              {['buy', 'sell', 'rent', 'landlord', 'services', 'about'].map(page => (
-                <button key={page} onClick={() => setCurrentPage(page as any)}
-                  className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center">
-                  {page.charAt(0).toUpperCase() + page.slice(1)}
-                </button>
-              ))}
+              <button 
+                onClick={() => setCurrentPage('buy')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Buy
+              </button>
+              <button 
+                onClick={() => setCurrentPage('sell')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Sell
+              </button>
+              <button 
+                onClick={() => setCurrentPage('rent')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Rent
+              </button>
+              <button 
+                onClick={() => setCurrentPage('landlord')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Landlord
+              </button>
+              <button 
+                onClick={() => setCurrentPage('services')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => setCurrentPage('about')}
+                className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center"
+              >
+                About
+              </button>
               <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 text-sm sm:text-base font-medium min-w-[60px] text-center">Contact</a>
             </nav>
             
@@ -96,6 +148,7 @@ function App() {
             </div>
           </div>
 
+          {/* Stats Cards */}
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
               <div className="flex items-center justify-center space-x-3">
@@ -108,6 +161,7 @@ function App() {
                 </div>
               </div>
             </div>
+
             <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
               <div className="flex items-center justify-center space-x-3">
                 <div className="bg-blue-100 p-2 rounded-lg">
@@ -119,6 +173,7 @@ function App() {
                 </div>
               </div>
             </div>
+
             <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm mx-auto">
               <div className="flex items-center justify-center space-x-3">
                 <div className="bg-purple-100 p-2 rounded-lg">
@@ -145,27 +200,80 @@ function App() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              { icon: Search, color: 'blue', title: 'Buying', desc: 'Find your dream home with our extensive property database and expert guidance throughout the buying process.', items: ['Property search assistance', 'Mortgage advice', 'Legal support coordination'] },
-              { icon: TrendingUp, color: 'green', title: 'Selling', desc: 'Get the best price for your property with our comprehensive marketing strategy and expert valuation services.', items: ['Free property valuations', 'Professional photography', 'Multi-platform marketing'] },
-              { icon: Key, color: 'purple', title: 'Renting', desc: "Whether you're a tenant or landlord, we provide complete letting services with full property management options.", items: ['Tenant matching', 'Property management', 'Legal compliance'] }
-            ].map((service, i) => (
-              <div key={i} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
-                <div className={`bg-${service.color}-100 p-3 rounded-lg w-fit mb-6 mx-auto`}>
-                  <service.icon className={`h-8 w-8 text-${service.color}-600`} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.desc}</p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  {service.items.map((item, j) => (
-                    <li key={j} className="flex items-center space-x-2 justify-center">
-                      <div className={`w-1.5 h-1.5 bg-${service.color}-600 rounded-full`}></div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+            {/* Buying */}
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+              <div className="bg-blue-100 p-3 rounded-lg w-fit mb-6 mx-auto">
+                <Search className="h-8 w-8 text-blue-600" />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Buying</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed text-center">
+                Find your dream home with our extensive property database and expert guidance throughout the buying process.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                  <span>Property search assistance</span>
+                </li>
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                  <span>Mortgage advice</span>
+                </li>
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                  <span>Legal support coordination</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Selling */}
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+              <div className="bg-green-100 p-3 rounded-lg w-fit mb-6 mx-auto">
+                <TrendingUp className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Selling</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed text-center">
+                Get the best price for your property with our comprehensive marketing strategy and expert valuation services.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
+                  <span>Free property valuations</span>
+                </li>
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
+                  <span>Professional photography</span>
+                </li>
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
+                  <span>Multi-platform marketing</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Renting */}
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+              <div className="bg-purple-100 p-3 rounded-lg w-fit mb-6 mx-auto">
+                <Key className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Renting</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed text-center">
+                Whether you're a tenant or landlord, we provide complete letting services with full property management options.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
+                  <span>Tenant matching</span>
+                </li>
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
+                  <span>Property management</span>
+                </li>
+                <li className="flex items-center space-x-2 justify-center text-center">
+                  <div className="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
+                  <span>Legal compliance</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -178,23 +286,41 @@ function App() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose MyEstateAgent?</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { icon: Users, color: 'blue', title: 'Local Expertise', desc: 'Deep knowledge of UK property markets with local insights that matter.' },
-                { icon: Heart, color: 'green', title: 'Personal Service', desc: 'Dedicated support throughout your property journey with a personal touch.' },
-                { icon: TrendingUp, color: 'purple', title: 'Proven Results', desc: 'Track record of successful transactions and satisfied clients across the UK.' }
-              ].map((item, i) => (
-                <div key={i} className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className={`bg-${item.color}-100 p-2 rounded-lg flex-shrink-0 mx-auto`}>
-                      <item.icon className={`h-6 w-6 text-${item.color}-600`} />
-                    </div>
-                    <div className="text-center">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.desc}</p>
-                    </div>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-100 p-2 rounded-lg flex-shrink-0 mx-auto">
+                    <Users className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">Local Expertise</h3>
+                    <p className="text-gray-600 text-center">Deep knowledge of UK property markets with local insights that matter.</p>
                   </div>
                 </div>
-              ))}
+              </div>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-green-100 p-2 rounded-lg flex-shrink-0 mx-auto">
+                    <Heart className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">Personal Service</h3>
+                    <p className="text-gray-600 text-center">Dedicated support throughout your property journey with a personal touch.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-purple-100 p-2 rounded-lg flex-shrink-0 mx-auto">
+                    <TrendingUp className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">Proven Results</h3>
+                    <p className="text-gray-600 text-center">Track record of successful transactions and satisfied clients across the UK.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -209,19 +335,29 @@ function App() {
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {[
-              { icon: Phone, color: 'blue', title: 'Call Us', value: '01234 567890' },
-              { icon: Mail, color: 'green', title: 'Email Us', value: 'hello@myestateagent.co.uk' },
-              { icon: MapPin, color: 'purple', title: 'Visit Us', value: 'High Street, Leicestershire' }
-            ].map((contact, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className={`bg-${contact.color}-100 p-3 rounded-lg mb-4`}>
-                  <contact.icon className={`h-6 w-6 text-${contact.color}-600`} />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{contact.title}</h3>
-                <p className="text-gray-600">{contact.value}</p>
+            <div className="flex flex-col items-center">
+              <div className="bg-blue-100 p-3 rounded-lg mb-4">
+                <Phone className="h-6 w-6 text-blue-600" />
               </div>
-            ))}
+              <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
+              <p className="text-gray-600">01234 567890</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="bg-green-100 p-3 rounded-lg mb-4">
+                <Mail className="h-6 w-6 text-green-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
+              <p className="text-gray-600">hello@myestateagent.co.uk</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="bg-purple-100 p-3 rounded-lg mb-4">
+                <MapPin className="h-6 w-6 text-purple-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Visit Us</h3>
+              <p className="text-gray-600">High Street, Leicestershire</p>
+            </div>
           </div>
           
           <button 
@@ -243,11 +379,24 @@ function App() {
             </div>
             
             <div className="flex space-x-6 text-sm text-gray-600">
-              {[['privacy', 'Privacy Policy'], ['terms', 'Terms of Service'], ['cookies', 'Cookie Policy']].map(([page, label]) => (
-                <button key={page} onClick={() => setCurrentPage(page as any)} className="hover:text-blue-600 transition-colors">
-                  {label}
-                </button>
-              ))}
+              <button 
+                onClick={() => setCurrentPage('privacy')}
+                className="hover:text-blue-600 transition-colors"
+              >
+                Privacy Policy
+              </button>
+              <button 
+                onClick={() => setCurrentPage('terms')}
+                className="hover:text-blue-600 transition-colors"
+              >
+                Terms of Service
+              </button>
+              <button 
+                onClick={() => setCurrentPage('cookies')}
+                className="hover:text-blue-600 transition-colors"
+              >
+                Cookie Policy
+              </button>
             </div>
           </div>
           
