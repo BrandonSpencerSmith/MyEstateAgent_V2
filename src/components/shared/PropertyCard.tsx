@@ -24,6 +24,7 @@ export default function PropertyCard({
 }: PropertyCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <div className="border-2 border-blue-500 p-2 bg-green-100 text-black text-xs">DEBUG: PropertyCard rendering</div>
       <div className="relative">
         <img src={image} alt={alt} className="w-full h-64 object-cover" />
         <div className="absolute top-4 left-4">

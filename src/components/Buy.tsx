@@ -25,6 +25,7 @@ export default function Buy({ onBack }: BuyProps) {
 
   return (
     <div className="min-h-screen bg-white">
+      <div className="border-2 border-red-500 p-4 bg-yellow-100 text-black">DEBUG: Buy page is rendering</div>
       <PageHeader onBack={onBack} />
 
       <section className="py-8 lg:py-12 bg-white">
@@ -49,6 +50,9 @@ export default function Buy({ onBack }: BuyProps) {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="col-span-full border-2 border-purple-500 p-2 bg-pink-100 text-black text-sm">
+              DEBUG: Found {buyProperties.length} properties to display
+            </div>
             {buyProperties.map((prop, i) => (
               <PropertyCard key={i} {...prop} onBook={openPopup} />
             ))}
